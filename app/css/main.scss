@@ -24,6 +24,11 @@ body{
           cursor: pointer;
           z-index: 1002000;
           font-size: 20px;
+          opacity: 1;
+          transform: opacity 1s ease-in;
+        }
+        .notShowclick{
+          opacity: 0;
         }
         .clicktop{
           top: 20px;

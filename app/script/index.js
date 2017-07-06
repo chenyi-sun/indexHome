@@ -35,7 +35,7 @@ import Apps from './../components/App.vue'
            length: document.getElementsByClassName('div').length,
            height: document.getElementsByTagName('body')[0].clientHeight,
            app: document.getElementById('app'),
-           where: '下',
+           isShowClick: true,//不显示
            sliderFlag: 0,
         },
         components: {
@@ -47,16 +47,14 @@ import Apps from './../components/App.vue'
             let click = document.getElementsByClassName('click');
             let app = document.getElementById('app');
             let flag = 0;
-
-            click[0].onclick = function() {
+            click[1].onclick = function() {
               if(sef.iChange == sef.length - 1){
                  flag = 1;
-                 sef.where = '上'
               }
               if(sef.iChange == 0){
                 flag = 0;
-                sef.where = '下'
               }
+             
 
               if (flag == 0){
                   sef.iChange = sef.iChange+1;
@@ -86,14 +84,11 @@ import Apps from './../components/App.vue'
               if(i >= ((sef.length-1)*length/changWidth)){
                   i = ((sef.length-1)*length/changWidth);
               }
-
-              if((sef.iChange+1) == parseInt(i/(length/changWidth))){
-                if(event.wheelDelta<0){
-                  sef.iChange = sef.iChange + 1;
-                }
-              }
               app.style.top = -i*changWidth + 'px';
+              sef.iChange = Math.round((i*changWidth)/length);
+              sef.isShowClickFirst();
             }
+            
           },
           setHeight(){
               let app = document.getElementById('app');
@@ -135,7 +130,16 @@ import Apps from './../components/App.vue'
               console.log('ssss');
 
             }
-          }
+          },
+          isShowClickFirst(){
+              console.log('sss');
+            if(this.iChange == 0){
+              this.isShowClick = true;
+            }
+            else{
+              this.isShowClick = false;
+            }
+          },
         },
         mounted(){
             this.setHeight();
