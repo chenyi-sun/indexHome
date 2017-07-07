@@ -16,15 +16,17 @@ body{
       height: 100%;
       overflow: hidden;
         .click{
-          width: 60px;
-          height: 60px;
+          width: 30px;
+          height: 30px;
           position: fixed;
-          left: 20px;
+          left: 16px;
           background: white;
           cursor: pointer;
-          z-index: 1002000;
+          z-index: 1002;
           font-size: 20px;
-          opacity: 1;
+          opacity: 0.8;
+          border-radius: 30px;
+          text-align: center;
           transform: opacity 1s ease-in;
         }
         .notShowclick{
@@ -48,11 +50,11 @@ body{
             position: absolute;
             top: 100%;
             background: rgba(0,0,0,1);
-            z-index: 1000;
             transition: all 0.35s ease-in-out;
+            z-index: 1003;
           }
           .menu{
-            z-index: 1001;
+            z-index: 1004;
             width: 40px;
             height: 38px;
             overflow: hidden;
@@ -69,6 +71,7 @@ body{
               width: 100%;
               height: auto;
               position: absolute;;
+              overflow: hidden;
               top: 0;
               left: 0;
               transition: all 0.15s ease-in;

@@ -10,23 +10,12 @@
 <body>
   <div id="appall">
       <div id="app">
-          <div class="div1 div">sssssssssssssssssssssssss
-          ssssssssssssssssssssssssssssssssssssssssssssssssssss
-          sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-          ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-          ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-          ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-          ssssssssssssssssssssssssssssssssssssssssssssssssssss
-          sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-          ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-          ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-          ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-        </div>
+          <div class="div1 div">
+          </div>
           <div class="div2 div"></div>
           <div class="div3 div"></div>
           <div class="div4 div"></div>
       </div>
-
       <div class="slider"></div>
       <div class="menu" v-on:click="setMenu">
         <div class="menubox">
@@ -37,8 +26,8 @@
           <div class="menuline"></div>
         </div>
       </div>
-      <div class="click clicktop" :class="{ notShowclick: isShowClick}">上</div>
-      <div class="click clickbottom">下</div>
+      <div class="click clicktop" :class="{ notShowclick: isShowClick}" v-on:click="setChange(1)">上</div>
+      <div class="click clickbottom" v-on:click="setChange(2)">下</div>
   </div>
     <!-- <img imgsrc="./../imgs/s.jpg" alt="" id="b"> -->
 </body>

@@ -5,29 +5,8 @@ import Vue from 'vue';
 import axios from 'axios'
 import Apps from './../components/App.vue'
 
-// function change(paremary){
-//     this.name = "ss";
-//     this.alert = paremary;
-// }
-// axios.get('http://apiqinbayou.ztxywy.net/app/service/category/index?openid=ocbOUs4UnYI7uQ4TEOG8Sr3MdsQc')
-// .then(function(item){
-//     console.log(item.data);
-//     let ss = item.data;
-//     let app = new Vue({
-//         el: '#app',
-//         data: {
-//             message: item.data
-//         }
-//     })
-// });
-// let ss = {
-//     ss:'sss'
-// }
-// const longChance = ['sss', 'ksksksk'];
-// let alls = longChance.map((item) =>  new change(item));
-// console.log( Object.assign(...alls));
 
-    let app = new Vue({
+let app = new Vue({
         el: '#appall',
         data: {
            sss: 'ssss',
@@ -42,28 +21,31 @@ import Apps from './../components/App.vue'
             'Apps': Apps
         },
         methods: {
-          setChange(){
+          setChange(item){
             let sef = this;
-            let click = document.getElementsByClassName('click');
-            let app = document.getElementById('app');
             let flag = 0;
-            click[1].onclick = function() {
-              if(sef.iChange == sef.length - 1){
-                 flag = 1;
+            let app = document.getElementById('app');
+              if(item == 1){
+                sef.iChange = sef.iChange-1;
               }
-              if(sef.iChange == 0){
-                flag = 0;
+              else if(item == 2 ){
+                 sef.iChange = sef.iChange+1;
               }
-             
-
-              if (flag == 0){
-                  sef.iChange = sef.iChange+1;
+              if(sef.iChange == sef.length){
+                 sef.iChange = sef.iChange -1;
+                 return false;
               }
-              else if(flag == 1){
-                  sef.iChange = sef.iChange-1;
+              else if(sef.iChange == -1){
+                sef.iChange = 0;
+                return false;
               }
-              app.style.top = -sef.height*sef.iChange + 'px';
-            }
+              else if(sef.iChange > 0){
+                sef.isShowClick = false; 
+              }
+              else if(sef.iChange == 0){
+                sef.isShowClick = true; 
+              }
+            app.style.top = -sef.height*sef.iChange + 'px';
           },
           linster(){
             let sef = this;
@@ -116,9 +98,7 @@ import Apps from './../components/App.vue'
             if(!a){
               this.sliderFlag = this.sliderFlag==0?1:0;
             }
-
             slider.style.top = this.sliderFlag==1?0:(this.height-300) + "px";
-
             var change = this.sliderFlag==1?(-this.iChange*this.height-300):(-this.iChange*this.height);
             setTimeout(setTop,300);
             setTimeout(setMenuTop,500);
@@ -127,8 +107,7 @@ import Apps from './../components/App.vue'
               slider.style.top = sef.sliderFlag==1?0:sef.height + "px";
             }
             function setMenuTop(){
-              console.log('ssss');
-
+             
             }
           },
           isShowClickFirst(){
