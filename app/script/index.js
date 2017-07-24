@@ -51,7 +51,6 @@ let app = new Vue({
           },
           changeshowlog(){
             this.showlog = !this.showlog;
-            console.log(this.showlog);
           },
           linster(){
             let sef = this;
@@ -65,7 +64,6 @@ let app = new Vue({
             }
             function wheel(event){
               i = event.wheelDelta>0?i-length/changWidth:i+length/changWidth;
-
               if(i<0){
                 i = 0;
               }
