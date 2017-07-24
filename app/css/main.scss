@@ -59,8 +59,8 @@ body{
             height: 38px;
             overflow: hidden;
             position: absolute;
-            right: 5%;
-            top: 40px;
+            right: 40px;
+            top: 20px;
             cursor: pointer;
             &:hover{
               .menubox{
@@ -74,8 +74,7 @@ body{
               overflow: hidden;
               top: 0;
               left: 0;
-              transition: all 0.15s ease-in;
-             
+              transition: all 0.35s ease-in;
               &:nth-child(3){
                 margin-bottom:20px
               }
@@ -86,6 +85,21 @@ body{
                 margin-bottom: 8px;
 
               }
+            }
+          }
+          .login{
+            width: auto;
+            height: auto;
+            position: absolute;
+            z-index: 1002;
+            right: 120px;
+            top: 22px; 
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.35s ease-in;
+            &:hover{
+              color: blue;
             }
           }
         }

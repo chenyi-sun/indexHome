@@ -51,6 +51,10 @@
           <div class="menuline"></div>
         </div>
       </div>
+      <div class="login" v-on:click="changeshowlog">
+            login
+      </div>
+      <login :showif="showlog" ></login>
       <div class="click clicktop" :class="{ notShowclick: isShowClick}" v-on:click="setChange(1)">上</div>
       <div class="click clickbottom" v-on:click="setChange(2)">下</div>
   </div>

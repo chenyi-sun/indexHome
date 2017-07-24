@@ -4,7 +4,7 @@ require('./img');
 import Vue from 'vue';
 import axios from 'axios'
 import Apps from './../components/App.vue'
-
+import Login from './../components/Login.vue'
 
 let app = new Vue({
         el: '#appall',
@@ -16,9 +16,11 @@ let app = new Vue({
            app: document.getElementById('app'),
            isShowClick: true,//不显示
            sliderFlag: 0,
+           showlog: false,
         },
         components: {
-            'Apps': Apps
+            'Apps': Apps,
+            'Login': Login,
         },
         methods: {
           setChange(item){
@@ -46,6 +48,10 @@ let app = new Vue({
                 sef.isShowClick = true; 
               }
             app.style.top = -sef.height*sef.iChange + 'px';
+          },
+          changeshowlog(){
+            this.showlog = !this.showlog;
+            console.log(this.showlog);
           },
           linster(){
             let sef = this;
