@@ -10,8 +10,9 @@ export_build =merge({
         historyApiFallback: true,//不跳转
         inline: true,//实时刷新,
         open: true,//自动打开
-        // hot: true,//热加载
-    } 
+        // hot: true,//热加载 
+    },
+   
 },webpackBase,{
      plugins: [
          new webpack.LoaderOptionsPlugin({

@@ -8,7 +8,6 @@ import axios from 'axios'
 import Apps from './../components/App.vue'
 import  Velocity from 'velocity-animate'
 // import Login from './../components/Login.vue'
-
 let app = new Vue({
         el: '#appall',
         data: {
@@ -203,12 +202,15 @@ let app = new Vue({
            }
         },
         mounted(){
+           var self = this;
             this.setHeight();
             this.setChange();
             this.linster();
-            // this.setMenu();
             this.resized();
             this.drawCanvas();
-            
+            axios.get('http://www.mytest.com/index/index/test1')
+            .then(function(item){
+                console.log(item.data);
+            });
         }
     });
