@@ -1,10 +1,13 @@
 require('./../css/main.scss');
 require('./all.js');
 require('./img');
+require('./../css/login.scss');
+require('./canvas3');
 import Vue from 'vue';
 import axios from 'axios'
 import Apps from './../components/App.vue'
-import Login from './../components/Login.vue'
+import  Velocity from 'velocity-animate'
+// import Login from './../components/Login.vue'
 
 let app = new Vue({
         el: '#appall',
@@ -16,11 +19,14 @@ let app = new Vue({
            app: document.getElementById('app'),
            isShowClick: true,//不显示
            sliderFlag: 0,
-           showlog: false,
+           loginShow:{
+             showif: false,
+             flagSee: 1,
+           }
         },
         components: {
             'Apps': Apps,
-            'Login': Login,
+            // 'Login': Login,
         },
         methods: {
           setChange(item){
@@ -50,7 +56,7 @@ let app = new Vue({
             app.style.top = -sef.height*sef.iChange + 'px';
           },
           changeshowlog(){
-            this.showlog = !this.showlog;
+            this.loginShow.showif = !this.loginShow.showif;
           },
           linster(){
             let sef = this;
@@ -92,6 +98,7 @@ let app = new Vue({
               sef.setHeight();
               sef.linster();
               sef.setMenu(false);
+              sef.drawCanvas();
             }
           },
           setMenu(a){
@@ -115,7 +122,6 @@ let app = new Vue({
             }
           },
           isShowClickFirst(){
-              console.log('sss');
             if(this.iChange == 0){
               this.isShowClick = true;
             }
@@ -123,6 +129,78 @@ let app = new Vue({
               this.isShowClick = false;
             }
           },
+          close(){
+            this.loginShow.showif = false;
+          },
+          changeSignPage(item){
+            this.loginShow.flagSee = item;
+          },
+          drawCanvas(){
+              class Point {
+                constructor(x, y) {
+                    this.x = x;
+                    this.y = y;
+                    this.r = 1;
+                    this._mx = Math.random() ;
+                    this._my = Math.random() ;
+                }
+                drawCircle(ctx) {
+                      ctx.beginPath();  
+                      ctx.arc(this.x, this.y, this.r, 0, 360);
+                      ctx.closePath();
+                      ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+                      ctx.fill();
+                    }
+                 drawLine(ctx) {
+                    ctx.beginPath();
+                    ctx.moveTo(this.x, this.y);
+                    ctx.lineTo(this.x+40,this.y+40);
+                    ctx.closePath();
+                    ctx.strokeStyle = 'rgba(102 ,139 ,139 ,0.3)';
+                    ctx.stroke();
+
+                    ctx.beginPath();
+                    ctx.moveTo(this.x, this.y);
+                    ctx.lineTo(this.x+40,this.y);
+                    ctx.closePath();
+                    ctx.strokeStyle = 'rgba(102 ,139 ,139 ,0.3)';
+                    ctx.stroke();
+
+                    ctx.beginPath();
+                    ctx.moveTo(this.x, this.y);
+                    ctx.lineTo(this.x,this.y+40);
+                    ctx.closePath();
+                    ctx.strokeStyle = 'rgba(102 ,139 ,139 ,0.3)';
+                    ctx.stroke();
+                 }
+                };
+
+              window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+              let canvas = document.getElementById('canvas');
+              let ctx = canvas.getContext('2d');
+              let w = canvas.width = canvas.offsetWidth;
+              let h = canvas.height = canvas.offsetHeight;
+              let points = [];
+              let length = 40;
+              var widthNum = Math.ceil(w/length);
+              var heightNum = Math.ceil(h/length);
+              let num = widthNum * heightNum;
+              var l = 0,lis = 0;
+              for (var i = 0; i < num; i++) {
+                if(i % widthNum == 0){
+                   l = l+1;
+                   lis = 0;
+                 }
+                lis = lis + 1;  
+                points.push(new Point(-2+(lis-1)*length,-1+(l-1)*length));
+                 
+              }
+              for (let i = 0; i < points.length; i++) {
+                 
+                  points[i].drawCircle(ctx);
+                  points[i].drawLine(ctx);
+              }
+           }
         },
         mounted(){
             this.setHeight();
@@ -130,5 +208,7 @@ let app = new Vue({
             this.linster();
             // this.setMenu();
             this.resized();
+            this.drawCanvas();
+            
         }
     });
