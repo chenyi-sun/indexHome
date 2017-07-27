@@ -29,6 +29,13 @@ body{
         word-wrap:break-word;
         padding-left: 20px;
         padding-right: 20px;
+        .position{
+            width: calc(180px - 14%);
+            height: 190px;
+            display: inline-block;
+            background: white;
+            float: left;
+        }
         .menu{
             width: 30px;
             height: 30px;
@@ -68,6 +75,7 @@ body{
         padding-top: $backpadding;
         cursor: pointer;
         text-transform:uppercase;
+        z-index: 100000;
         .border{
            animation-fill-mode:forwards;
         }
@@ -158,6 +166,7 @@ body{
              transition: all 2s 0.3s;
              background: rgba(255,255,255,0);
               transform-style:preserve-3d;
+           
              .top{
                 width: 0;
                 height: 0;
@@ -213,6 +222,7 @@ body{
             position: absolute;
             top: 0;
             left: -50px;
+            cursor: pointer;
         }
     }
     .article-change{
