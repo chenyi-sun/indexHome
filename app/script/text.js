@@ -1,3 +1,3 @@
 console.log('ask me to change');
-require('./../css/text.css');
+require('./../css/text.scss');
 require('./all.js');
