@@ -19,8 +19,12 @@ trigle.onclick = function(){
         title.setAttribute('class', 'article article-change');
     }
     else if(changtitle == 1){
+        changtitle = 2;
+        title.setAttribute('class', 'article article-change2');
+    }
+    else if(changtitle == 2){
         changtitle = 0;
         title.setAttribute('class', 'article');
     }
-    
+     
 }
