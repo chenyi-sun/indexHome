@@ -208,7 +208,7 @@ let app = new Vue({
             this.linster();
             this.resized();
             this.drawCanvas();
-            axios.get('http://www.mytest.com/index/index/test1')
+            axios.get('./index/index/test1')
             .then(function(item){
                 console.log(item.data);
             });
