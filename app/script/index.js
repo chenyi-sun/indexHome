@@ -21,6 +21,13 @@ let app = new Vue({
            loginShow:{
              showif: false,
              flagSee: 1,
+           },
+           create:{
+             username: '',
+             email: '',
+             password: '',
+             repassword: '',
+             mobile: '',
            }
         },
         components: {
@@ -199,6 +206,16 @@ let app = new Vue({
                   points[i].drawCircle(ctx);
                   points[i].drawLine(ctx);
               }
+           },
+           creatAccount(){
+             var self = this;
+             axios.get('http://www.mytest.com/index/index/test7',{
+               params:self.create
+             })
+              .then(function(item){
+                  console.log(item);
+              });
+              
            }
         },
         mounted(){
@@ -208,9 +225,6 @@ let app = new Vue({
             this.linster();
             this.resized();
             this.drawCanvas();
-            axios.get('./index/index/test1')
-            .then(function(item){
-                console.log(item.data);
-            });
+            
         }
     });

@@ -76,16 +76,16 @@
                 </div>
                 <div class="text-box" v-if="loginShow.flagSee==2">
                     <div class="head-name">username<p>*</p></div>
-                    <input type="text"/>
+                    <input type="text" v-model="create.username"/>
                     <div class="head-name">email<p>*</p></div>
-                    <input type="text"/>
+                    <input type="text" v-model="create.email"/>
                     <div class="head-name">password<p>*</p></div>
-                    <input type="password"/>
+                    <input type="password" v-model="create.password"/>
                     <div class="head-name">confirm password<p>*</p></div>
-                    <input type="password"/>
+                    <input type="password" v-model="create.repassword"/>
                     <div class="head-name">mobile<p>*</p></div>
-                    <input type="text"/>
-                    <div class="submit">Create an Account</div>
+                    <input type="text" v-model="create.mobile"/>
+                    <div class="submit" v-on:click="creatAccount()">Create an Account</div>
                 </div>
             </div>
       </div>
