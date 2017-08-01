@@ -17,8 +17,7 @@ body{
         height: auto;
         background: rgba(255,255,255,0.4);
         position: relative;
-        left: 50%;
-        margin-left: -30%;
+        margin: 0 auto;
         margin-top: 40px;
         min-height: 40px;
         z-index: 10;
@@ -157,7 +156,6 @@ body{
         transition: all 2s;
         transform: rotateY(-20deg);
         z-index: 10000;
-
         .div0{
              width: 100px;
              height: 100%;
@@ -322,4 +320,40 @@ body{
         left: 14px;
         transform: rotate(-45deg)
         }
+}
+@media screen and (max-width:1200px){
+  
+}
+@media screen and (max-width:1000px){
+  
+}
+@media screen and (max-width:600px){
+  body {
+      .text{
+          width: 90%;
+          padding: 2%;
+      }
+      .article{
+          display: none;
+      }
+      .back{
+          top: -30px;
+      }
+  }
+}
+@media screen and (max-width:500px){
+  
+}
+@media screen and (max-width:400px){
+   body {
+      .text{
+          width: 100%;
+      }
+  }
+}
+@media screen and (max-width:320px){
+  
+}
+@media screen and (max-width:300px){
+  
 }
