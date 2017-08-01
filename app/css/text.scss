@@ -332,12 +332,16 @@ body{
       .text{
           width: 90%;
           padding: 2%;
+          top: 40px;
       }
       .article{
           display: none;
       }
       .back{
           top: -30px;
+      }
+      .pic{
+          width: 60%;
       }
   }
 }
@@ -347,7 +351,12 @@ body{
 @media screen and (max-width:400px){
    body {
       .text{
-          width: 100%;
+          width: 96%;
+          padding: 2%;
+          .menu{
+              top: -20px;
+              right: 20px;
+          }
       }
   }
 }
