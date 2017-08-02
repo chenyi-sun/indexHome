@@ -129,7 +129,8 @@ var devSet = {
     entry: {
         "index": path.join(__dirname, "./../app/script/index.js"),
         "second": path.join(__dirname, "./../app/script/second.js"),
-        "text": path.join(__dirname, "./../app/script/text.js")
+        "text": path.join(__dirname, "./../app/script/text.js"),
+        'edit': path.join(__dirname, "./../app/script/edit.js"),
     },
     output: {
         publicPath: envirParm === "dev" ? '' : './',//除了JS以外的资源文件路径，css,img url等等相对于path的路径
