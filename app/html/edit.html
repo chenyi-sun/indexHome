@@ -17,14 +17,14 @@
         </div>
         <div class="in-box">
             <div class="left">大分类</div>
-            <select v-model="bigselect">
+            <select v-model="bigselect" @change="changebingselect(bigselect)">
                 <option v-for="item in bigSelects">{{item.bigtype}}</option>
             </select>
         </div>
         <div class="in-box">
             <div class="left" >小分类</div>
             <select v-model="smallselect">
-                <option v-for="item in smalltypes" v-if="bigselect==item.bigtype" >{{item.type}}</option>
+                <option v-for="item in smalltypes" :value="item.value"  v-if="bigselect==item.bigtype" >{{item.type}}</option>
             </select>
         </div>
         <div class="submit" v-on:click="submit">提交</div>
