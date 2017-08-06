@@ -39,7 +39,7 @@
               <div class="text-box">
                   <div class="text-littel" v-for="item in allarticle.getarticle">
                       <div class="back-box">{{item.title}}</div>
-                      <a :href="'http://test1.com/index/text/index?articleid='+item.id"><div class="content-box">{{item.title}}</div></a>
+                      <a :href="'./text.html?articleid='+item.id"><div class="content-box">{{item.title}}</div></a>
                   </div>
                   <div class="trigle"></div>
               </div>
@@ -80,7 +80,7 @@
                     <input type="text"/>
                     <div class="head-name">password<p>*</p></div>
                     <input type="password"/>
-                    <div class="submit">Sign In</div>
+                    <div class="submit" v-on:click="signIn">Sign In</div>
                 </div>
                 <div class="text-box" v-if="loginShow.flagSee==2">
                     <div class="head-name">username<p>*</p></div>

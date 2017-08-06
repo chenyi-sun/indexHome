@@ -29,7 +29,7 @@ export_build = merge(webpackBase, {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors',
             chunks: chunksName,
-            minChunks: 2,
+            minChunks: 3,
         }),
          ...allHtml,
         new webpack.optimize.UglifyJsPlugin({

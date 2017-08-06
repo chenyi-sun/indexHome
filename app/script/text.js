@@ -1,5 +1,6 @@
-console.log('ask me to change');
+import Vue from 'vue';
 require('./../css/text.scss');
+require('./all.js');
 //http://sandbox.runjs.cn/show/3d6krhzb#
 
 let trigle = document.getElementById('menu');
@@ -28,3 +29,7 @@ trigle.onclick = function(){
     }
      
 }
+
+let text = new Vue({
+      el: '#text',
+});

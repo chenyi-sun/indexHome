@@ -7,6 +7,7 @@ import Vue from 'vue';
 import axios from 'axios'
 import Apps from './../components/App.vue'
 import  Velocity from 'velocity-animate'
+import qs from 'qs';
 // import Login from './../components/Login.vue'
 let app = new Vue({
         el: '#appall',
@@ -212,21 +213,34 @@ let app = new Vue({
            },
            creatAccount(){
              var self = this;
-            //  axios.get('http://www.mytest.com/index/index/test7',{
-            //    params:self.create
-            //  })
-            //   .then(function(item){
-            //       console.log(item);
-            //   });
+             axios.post('http://test1.com/index/index/addaccount',qs.stringify({
+               username: self.create.username,
+               password: self.create.password,
+               mobile: self.create.mobile,
+               email: self.create.email,
+             }))
+              .then(function(item){
+                //注册账户成功以后把数据清空
+                if(item.code == 200){
+                  self.create.username = '';
+                  self.create.password = '';
+                  self.create.mobile = '';
+                  self.create.email = '';
+                }
+                  console.log(item);
+              });
            },
           setArticles(){
              var self = this;
-            axios.get('http://test1.com/index/index/getarticle',{
-
-            }).then(function(res){
+             axios.get('http://test1.com/index/index/getarticle',{
+             }).then(function(res){
               self.allarticle.getarticle = res.data;
               console.log(self.allarticle.getarticle);
-            });
+             });
+          },
+          signIn(){
+            //用户登录
+            
           }
       },
         mounted(){
