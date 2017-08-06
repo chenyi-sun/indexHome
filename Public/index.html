@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <!--<link rel="stylesheet" href="./index.bundle.css"/>-->
-<link href="././css/index.a259767751f4f2c03d1d5a0a92604aab.css" rel="stylesheet"></head>
+<link href="././css/index.b15d807b48781e40d901a03273a514b6.css" rel="stylesheet"></head>
 <body>
   <div id="appall">
       <div id="app">
@@ -35,7 +35,15 @@
                 </g>
             </svg>
           </div>
-          <div class="div2 div"></div>
+          <div class="div2 div">
+              <div class="text-box">
+                  <div class="text-littel" v-for="i in 20">
+                      <div class="back-box">ssssssss</div>
+                      <div class="content-box">ssssssss</div>
+                  </div>
+                  <div class="trigle"></div>
+              </div>
+          </div>
           <div class="div3 div">
               <div id="div3">
                   <canvas id="canvas">
@@ -76,16 +84,16 @@
                 </div>
                 <div class="text-box" v-if="loginShow.flagSee==2">
                     <div class="head-name">username<p>*</p></div>
-                    <input type="text"/>
+                    <input type="text" v-model="create.username"/>
                     <div class="head-name">email<p>*</p></div>
-                    <input type="text"/>
+                    <input type="text" v-model="create.email"/>
                     <div class="head-name">password<p>*</p></div>
-                    <input type="password"/>
+                    <input type="password" v-model="create.password"/>
                     <div class="head-name">confirm password<p>*</p></div>
-                    <input type="password"/>
+                    <input type="password" v-model="create.repassword"/>
                     <div class="head-name">mobile<p>*</p></div>
-                    <input type="text"/>
-                    <div class="submit">Create an Account</div>
+                    <input type="text" v-model="create.mobile"/>
+                    <div class="submit" v-on:click="creatAccount()">Create an Account</div>
                 </div>
             </div>
       </div>

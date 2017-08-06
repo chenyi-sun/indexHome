@@ -37,9 +37,9 @@
           </div>
           <div class="div2 div">
               <div class="text-box">
-                  <div class="text-littel" v-for="i in 20">
-                      <div class="back-box">ssssssss</div>
-                      <div class="content-box">ssssssss</div>
+                  <div class="text-littel" v-for="item in allarticle.getarticle">
+                      <div class="back-box">{{item.title}}</div>
+                      <a :href="'http://test1.com/index/text/index?articleid='+item.id"><div class="content-box">{{item.title}}</div></a>
                   </div>
                   <div class="trigle"></div>
               </div>

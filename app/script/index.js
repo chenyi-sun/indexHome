@@ -28,6 +28,9 @@ let app = new Vue({
              password: '',
              repassword: '',
              mobile: '',
+           },
+           allarticle:{
+             getarticle: 'sssss',
            }
         },
         components: {
@@ -209,15 +212,23 @@ let app = new Vue({
            },
            creatAccount(){
              var self = this;
-             axios.get('http://www.mytest.com/index/index/test7',{
-               params:self.create
-             })
-              .then(function(item){
-                  console.log(item);
-              });
-              
-           }
-        },
+            //  axios.get('http://www.mytest.com/index/index/test7',{
+            //    params:self.create
+            //  })
+            //   .then(function(item){
+            //       console.log(item);
+            //   });
+           },
+          setArticles(){
+             var self = this;
+            axios.get('http://test1.com/index/index/getarticle',{
+
+            }).then(function(res){
+              self.allarticle.getarticle = res.data;
+              console.log(self.allarticle.getarticle);
+            });
+          }
+      },
         mounted(){
            var self = this;
             this.setHeight();
@@ -225,6 +236,6 @@ let app = new Vue({
             this.linster();
             this.resized();
             this.drawCanvas();
-            
+            this.setArticles();
         }
     });

@@ -16,12 +16,11 @@ let edit = new Vue({
       },
       mounted(){
            var self = this;
-           axios.get('http://www.mytest.com/index/index/edit',{
-                  params:{
-                      'dd': 'ddd',
-                  }
+        //    axios.get('http://www.mytest.com/index/index/edit',{
+            // axios.get('http://test1.com/index/index/edit',{
+           axios.get('./edit',{
              })
-              .then(function(item){
+             .then(function(item){
                   var data = item.data;
                   self.setAllselect(data);
             });
@@ -33,11 +32,14 @@ let edit = new Vue({
               console.log('text:'+self.text);
               console.log('bigselect:'+self.bigselect);
               console.log('smalltypes:'+self.smallselect);
-              axios.post('http://www.mytest.com/index/index/edit',qs.stringify({
+            //   axios.post('http://www.mytest.com/index/index/edit',qs.stringify({
+                
+            //   axios.post('http://test1.com/index/index/edit',qs.stringify({
+             axios.post('./edit',qs.stringify({
                     title: self.title,
                     content: self.text,
                     bigtype: self.bigselect,
-                    type: self.smallselect,
+                    smalltype_value: self.smallselect,
                 }))
                 .then(function(res){
                 console.log(res);

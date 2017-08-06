@@ -194,7 +194,67 @@ body {
   to {
     stroke-dashoffset: 1; } }
     body #app .div2 {
-      background: #21A179; }
+      background: #21A179;
+      position: relative;
+      -webkit-perspective: 4830px;
+              perspective: 4830px;
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d; }
+      body #app .div2 .text-box {
+        width: 90%;
+        height: 80%;
+        position: absolute;
+        left: 5%;
+        top: 13%;
+        text-align: left;
+        overflow: hidden; }
+        body #app .div2 .text-box .trigle {
+          width: 0;
+          height: 0;
+          position: absolute;
+          bottom: 0;
+          right: -150px;
+          border-left: 500px solid transparent;
+          border-right: 150px solid transparent;
+          border-bottom: 300px solid #D6FF79; }
+        body #app .div2 .text-box .text-littel {
+          width: 30%;
+          height: auto;
+          background: white;
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+          margin-left: 1.5%;
+          margin-right: 1.5%; }
+          body #app .div2 .text-box .text-littel .content-box {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #21A179;
+            -webkit-box-shadow: 0 0 20px 0px transparent;
+                    box-shadow: 0 0 20px 0px transparent;
+            -webkit-transform: rotateX(0deg) translateY(0px);
+                    transform: rotateX(0deg) translateY(0px);
+            -webkit-transition: all 0.25s ease-in;
+            transition: all 0.25s ease-in;
+            color: white;
+            font-size: 16px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center; }
+          body #app .div2 .text-box .text-littel:hover .content-box {
+            -webkit-transform: rotateX(10deg) translateY(0px) translateX(0px) scale(0.98);
+                    transform: rotateX(10deg) translateY(0px) translateX(0px) scale(0.98); }
+          body #app .div2 .text-box .text-littel .back-box {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            font-size: 16px;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 10px; }
     body #app .div3 {
       background: #B9E28C;
       position: relative; }

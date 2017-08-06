@@ -1592,8 +1592,7 @@ body {
     height: auto;
     background: rgba(255, 255, 255, 0.4);
     position: relative;
-    left: 50%;
-    margin-left: -30%;
+    margin: 0 auto;
     margin-top: 40px;
     min-height: 40px;
     z-index: 10;
@@ -1924,3 +1923,23 @@ body {
     left: 14px;
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg); } }
+
+@media screen and (max-width: 600px) {
+  body .text {
+    width: 90%;
+    padding: 2%;
+    top: 40px; }
+  body .article {
+    display: none; }
+  body .back {
+    top: -30px; }
+  body .pic {
+    width: 60%; } }
+
+@media screen and (max-width: 400px) {
+  body .text {
+    width: 96%;
+    padding: 2%; }
+    body .text .menu {
+      top: -20px;
+      right: 20px; } }
