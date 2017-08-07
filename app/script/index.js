@@ -33,6 +33,11 @@ let app = new Vue({
            },
            allarticle:{
              getarticle: 'sssss',
+           },
+           signin:{
+             username: '',
+             password: '',
+             isshake: false,
            }
         },
         components: {
@@ -213,7 +218,21 @@ let app = new Vue({
            },
            creatAccount(){
              var self = this;
-             self.loginShow.showif = false;
+            for(var item in self.create){
+              if(self.create[item]==''){
+                setTimeout(function() {
+                  self.signin.isshake = true;
+                }, 1);
+                self.signin.isshake = false;
+              }
+            }
+
+            //  if(self.create.username==''){
+            //    console.log('请填入姓名');
+              
+            //  }
+               
+             return false;
              axios.post('http://test1.com/index/index/addaccount',qs.stringify({
                username: self.create.username,
                password: self.create.password,
@@ -221,15 +240,19 @@ let app = new Vue({
                email: self.create.email,
              }))
               .then(function(item){
+                console.log(item);
                 //注册账户成功以后把数据清空
-                if(item.code == 200){
+                if(item.data.code == 200){
                   self.create.username = '';
                   self.create.password = '';
                   self.create.mobile = '';
                   self.create.email = '';
+                  self.create.repassword = '';
+                  self.loginShow.showif = false;
                 }
                   console.log(item);
               });
+              
            },
           setArticles(){
              var self = this;
@@ -241,7 +264,23 @@ let app = new Vue({
           },
           signIn(){
             var self = this;
-            self.loginShow.showif = false;
+            axios.get('http://test1.com/index/index/signin',{
+              params:{
+                 username: self.signin.username,
+                 password: self.signin.password,
+              }
+            }).then(function(item){
+              if(item.data.code==200){
+                 console.log(item);
+                 console.log('success');
+                 self.loginShow.showif = false;
+              }
+              else if(item.data.code==500){
+                self.signin.isshake = true;
+                console.log('faile');
+              }
+            });
+            self.signin.isshake = false;
             //用户登录
           }
       },

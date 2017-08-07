@@ -11,7 +11,7 @@ export_build =merge({
         inline: true,//实时刷新,
         open: true,//自动打开
         // hot: true,//热加载 
-        host: '192.168.1.18'
+        // host: '192.168.1.18'
     },
    
 },webpackBase,{

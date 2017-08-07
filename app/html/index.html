@@ -72,7 +72,7 @@
       <div class="login" v-on:click="changeshowlog">
             login
       </div>
-      <div id="Login" v-if="loginShow.showif">
+      <div id="Login" v-if="loginShow.showif" :class="{'animated':signin.isshake,'shake':signin.isshake}" >
             <div class="box">
                 <div class="close" v-on:click="close"></div>
                 <div class="head">
@@ -81,9 +81,9 @@
                 </div>
                 <div class="text-box" v-if="loginShow.flagSee==1" >
                     <div class="head-name">username<p>*</p></div>
-                    <input type="text"/>
+                    <input type="text" v-model="signin.username"/>
                     <div class="head-name">password<p>*</p></div>
-                    <input type="password"/>
+                    <input type="password" v-model="signin.password"/>
                     <div class="submit" v-on:click="signIn">Sign In</div>
                 </div>
                 <div class="text-box" v-if="loginShow.flagSee==2">
