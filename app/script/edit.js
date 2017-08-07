@@ -15,9 +15,9 @@ let edit = new Vue({
       },
       mounted(){
            var self = this;
-        //    axios.get('http://www.mytest.com/index/index/edit',{
+            axios.get('http://www.mytest.com/index/index/edit',{
             // axios.get('http://test1.com/index/index/edit',{
-           axios.get('./edit',{
+        //    axios.get('./edit',{
              })
              .then(function(item){
                   var data = item.data;
@@ -32,7 +32,6 @@ let edit = new Vue({
               console.log('bigselect:'+self.bigselect);
               console.log('smalltypes:'+self.smallselect);
             //   axios.post('http://www.mytest.com/index/index/edit',qs.stringify({
-                
             //   axios.post('http://test1.com/index/index/edit',qs.stringify({
              axios.post('./edit',qs.stringify({
                     title: self.title,
