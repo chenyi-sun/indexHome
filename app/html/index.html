@@ -37,9 +37,13 @@
           </div>
           <div class="div2 div">
               <div class="text-box">
-                  <div class="text-littel" v-for="item in allarticle.getarticle">
+                  <!--<div class="text-littel" v-for="item in allarticle.getarticle">
                       <div class="back-box">{{item.title}}</div>
                       <a :href="'./text.html?articleid='+item.id"><div class="content-box">{{item.title}}</div></a>
+                  </div>-->
+                  <div class="text-littel" v-for="item in 20">
+                      <div class="back-box">aaaaa</div>
+                      <a :href="'./text.html'"><div class="content-box">bbbbbbb</div></a>
                   </div>
                   <div class="trigle"></div>
               </div>
@@ -75,7 +79,7 @@
                     <div class="head-box" v-on:click="changeSignPage(1)" :class="{'cur':loginShow.flagSee==1}"> sign in </div>
                     <div class="head-box" v-on:click="changeSignPage(2)" :class="{'cur':loginShow.flagSee==2}"> create account </div>
                 </div>
-                <div class="text-box" v-if="loginShow.flagSee==1">
+                <div class="text-box" v-if="loginShow.flagSee==1" >
                     <div class="head-name">username<p>*</p></div>
                     <input type="text"/>
                     <div class="head-name">password<p>*</p></div>
@@ -98,8 +102,8 @@
             </div>
       </div>
       <!--<login :showif="showlog" ></login>-->
-      <div class="click clicktop" :class="{ notShowclick: isShowClick}" v-on:click="setChange(1)">上</div>
-      <div class="click clickbottom" v-on:click="setChange(2)">下</div>
+      <div class="click clicktop" :class="{ notShowclick: isShowClick}" v-on:click="setChange(1)"><i class="iconfont position-change">&#xe672;</i></div>
+      <div class="click clickbottom" v-on:click="setChange(2)"><i class="iconfont position-change">&#xe673;</i></div>
   </div>
     <!-- <img imgsrc="./../imgs/s.jpg" alt="" id="b"> -->
 </body>

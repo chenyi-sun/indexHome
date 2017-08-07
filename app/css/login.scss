@@ -131,3 +131,42 @@
       }
     }
 }
+@media screen and (max-width:600px){
+
+}
+@media screen and (max-width:440px){
+  #Login {
+      width: 80vw;
+      left: 10vw;
+      .box{
+          width: 100%;
+          top: 45%;
+          transform: translate(-50%,-50%);
+          padding-bottom: 0;
+      }
+  }
+  #Login .box .head .head-box{
+      font-size: 12px;
+  }
+  #Login .box .text-box .head-name{
+      margin-bottom: 6px;
+      margin-top: 6px;
+      font-size: 12px;
+  }
+  #Login .box .text-box input{
+      line-height: 30px;
+  }
+  #Login .box .text-box .submit{
+      font-size: 15px;
+  }
+  
+}
+@media screen and (max-width:400px){
+  
+}
+@media screen and (max-width:320px){
+  
+}
+@media screen and (max-width:300px){
+  
+}

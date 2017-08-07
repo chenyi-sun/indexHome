@@ -1,3 +1,12 @@
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('font/iconfont.eot');
+  src: url('font/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('font/iconfont.woff') format('woff'),
+  url('font/iconfont.ttf') format('truetype'),
+  url('font/iconfont.svg#iconfont') format('svg');
+}
 *{
   padding: 0;
   border: 0;
@@ -33,12 +42,28 @@ body{
         .notShowclick{
           opacity: 0;
         }
+        .iconfont{
+          font-family:"iconfont" !important;
+          font-size:16px;font-style:normal;
+          -webkit-font-smoothing: antialiased;
+          -webkit-text-stroke-width: 0.2px;
+          -moz-osx-font-smoothing: grayscale;
+        }
         .clicktop{
           top: 20px;
+           .position-change{
+              position: relative;
+              top: 3px;
+            }
         }
         .clickbottom{
           bottom: 20px;
+           .position-change{
+              position: relative;
+              top: 4px;
+            }
         }
+       
         #appall{
           width: 100%;
           height: 100%;
@@ -251,13 +276,60 @@ body{
   
 }
 @media screen and (max-width:1000px){
-  
+   body #appall .login{
+    font-size: 17px;
+    right: 80px;
+  }
+  body #appall .menu{
+    width: 35px;
+    right: 20px;
+    height: 30px;
+    top: 23px;
+  }
+  body #appall .menu .menubox .menuline{
+    height: 4px;
+    margin-bottom: 6px;
+  }
+  body #app .div2 .text-box .text-littel{
+    width: 47%;
+  }
 }
 @media screen and (max-width:600px){
-  
+  body #appall .login{
+    font-size: 15px;
+    right: 60px;
+  }
+  body #appall .menu{
+    width: 30px;
+    right: 15px;
+    height: 30px;
+    top: 22px;
+  }
+  body #appall .menu .menubox .menuline{
+    height: 4px;
+    margin-bottom: 6px;
+  }
 }
 @media screen and (max-width:500px){
-  
+  body .clickbottom .position-change{
+    top: 2px;
+  }
+  body .clicktop .position-change{
+    top: 0px;
+  }
+}
+@media screen and (max-width:420px){
+ body #app .div2 .text-box .trigle{
+   display: none;
+ }
+ body #app .div2 .text-box .text-littel{
+   width: 80%;
+   position: relative;
+   left: 10%;
+    .content-box{
+      transform: rotateX(0deg) translateY(1px);
+    }
+ }
 }
 @media screen and (max-width:400px){
   

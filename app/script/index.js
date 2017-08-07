@@ -8,6 +8,7 @@ import axios from 'axios'
 import Apps from './../components/App.vue'
 import  Velocity from 'velocity-animate'
 import qs from 'qs';
+
 // import Login from './../components/Login.vue'
 let app = new Vue({
         el: '#appall',
@@ -184,7 +185,6 @@ let app = new Vue({
                     ctx.stroke();
                  }
                 };
-
               window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
               let canvas = document.getElementById('canvas');
               let ctx = canvas.getContext('2d');
@@ -213,6 +213,7 @@ let app = new Vue({
            },
            creatAccount(){
              var self = this;
+             self.loginShow.showif = false;
              axios.post('http://test1.com/index/index/addaccount',qs.stringify({
                username: self.create.username,
                password: self.create.password,
@@ -239,8 +240,9 @@ let app = new Vue({
              });
           },
           signIn(){
+            var self = this;
+            self.loginShow.showif = false;
             //用户登录
-            
           }
       },
         mounted(){
