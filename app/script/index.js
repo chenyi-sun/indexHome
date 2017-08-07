@@ -73,6 +73,7 @@ let app = new Vue({
           },
           changeshowlog(){
             this.loginShow.showif = !this.loginShow.showif;
+            this.signin.isshake = false;
           },
           linster(){
             let sef = this;
@@ -231,7 +232,7 @@ let app = new Vue({
             //    console.log('请填入姓名');
               
             //  }
-               
+             self.signin.isshake = false;  
              return false;
              axios.post('http://test1.com/index/index/addaccount',qs.stringify({
                username: self.create.username,
