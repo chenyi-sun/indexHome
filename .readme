@@ -3,3 +3,34 @@
 axios
 
 引入了Velocity.js
+
+//2017-8-8//
+是单页项，单页单页可以分开。
+{index.html
+edit.html
+second.html
+text.html}不用引用
+
+public里面
+animate.css
+loading.css可以复用
+font也可以复用
+loading.vue可复用
+img.js可复用
+
+下面不用复用
+{
+edit.scss
+main.scss
+login.scss
+second.scss
+text.scss
+
+all.js
+canvas3.js
+edit.js
+index.js
+second.js
+text.js
+}
+//2017-8-8 over//
