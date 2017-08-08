@@ -12,6 +12,23 @@ let edit = new Vue({
         smallselect: '',
         title: '',
         text: '',
+        content:{
+            title: '',
+            content1: '',
+            content2:'',
+            content3: '',
+            content4: '',
+            content5:'',
+            content6: '',
+            img1: '',
+            img2: '',
+            img3: '',
+            img4: '',
+            img5: '',
+            img6: '',
+            bigtype: '',
+            smalltype_value: '',
+        },
       },
       mounted(){
            var self = this;
@@ -33,12 +50,8 @@ let edit = new Vue({
               console.log('smalltypes:'+self.smallselect);
             //   axios.post('http://www.mytest.com/index/index/edit',qs.stringify({
             //   axios.post('http://test1.com/index/index/edit',qs.stringify({
-             axios.post('./edit',qs.stringify({
-                    title: self.title,
-                    content: self.text,
-                    bigtype: self.bigselect,
-                    smalltype_value: self.smallselect,
-                }))
+               
+             axios.post('./edit',qs.stringify(self.content)) 
                 .then(function(res){
                 console.log(res);
                 })

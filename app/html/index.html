@@ -9,6 +9,7 @@
 </head>
 <body>
   <div id="appall">
+      <loading v-if="loadingisShow"></loading>
       <div id="app">
           <div class="div1 div">
               <svg id="svgForStroke1" width="196" height="68" xmlns="http://www.w3.org/2000/svg">
@@ -53,9 +54,19 @@
                   <canvas id="canvas">
 
                   </canvas>
+                  <div class="show-box">
+                      <div class="small-box left"></div>
+                      <div class="small-box right"></div>
+                      <div class="small-box left"></div>
+                      <div class="small-box right"></div>
+                  </div>
               </div>
           </div>
-          <div class="div4 div"></div>
+          <div class="div4 div">
+              <div class="search">
+                  <input type="text"/>
+              </div>
+          </div>
       </div>
       <div class="slider">
               

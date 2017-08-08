@@ -4,6 +4,7 @@ require('./img');
 require('./../css/login.scss');
 require('./canvas3');
 import Vue from 'vue';
+import Loading from './../components/Loading.vue';
 import axios from 'axios'
 import Apps from './../components/App.vue'
 import  Velocity from 'velocity-animate'
@@ -38,10 +39,12 @@ let app = new Vue({
              username: '',
              password: '',
              isshake: false,
-           }
+           },
+           loadingisShow: false,
         },
         components: {
             'Apps': Apps,
+            'Loading':Loading,
             // 'Login': Login,
         },
         methods: {

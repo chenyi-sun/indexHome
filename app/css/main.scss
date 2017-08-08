@@ -252,7 +252,7 @@ body{
           .div3{
             background: #B9E28C;
             position: relative;
-            #div3{
+          #div3{
               width: 100%;
               height: 100%;
               position: absolute;
@@ -265,10 +265,48 @@ body{
                 top: 0;
                 left: 0;
               }
+              .show-box{
+                width: 80%;
+                height:80%;
+                position: absolute;
+                left: 10%;
+                top: 10%;
+                background: rgba(0,0,255,0.5);
+                .small-box{
+                  width: 40%;
+                  height: 40%;
+                  display: inline-block;
+                  margin-left: 5%;
+                  margin-right: 5%;
+                  margin-top: 6%;
+                  // margin-bottom: 5%;
+                  background: grey;
+                  transition: all 0.2s ease-in;
+                }
+                .left{
+                  margin-right: 2.5%;
+                  margin-left: 7.5%;
+                }
+                .right{
+                  margin-left: 2.5%;
+                }
+              }
             }
           }
           .div4{
             background: grey;
+            .search{
+              width: 50%;
+              height: 60px;
+              background: black;
+              top: 50px;
+              left: 10%;
+              position: relative;
+              input{
+                font-size: 16px;
+                color: #eeeeee;
+              }
+            }
           }
         }
 }
@@ -294,20 +332,51 @@ body{
     width: 47%;
   }
 }
+@media screen and (max-width:800px){
+  body #app .div3 #div3 .show-box {
+    
+    .small-box{
+      width: 80%;
+      height: 20%;
+      margin-top: 2.5%;
+      // margin-bottom: 2.5%;
+      &:first-child{
+        margin-top: 6%;
+      }
+      
+    }
+    
+    .left{
+      margin-left: 10%;
+    }
+    .right{
+      margin-left: 10%;
+    }
+  }
+}
 @media screen and (max-width:600px){
-  body #appall .login{
-    font-size: 15px;
-    right: 60px;
-  }
-  body #appall .menu{
-    width: 30px;
-    right: 15px;
-    height: 30px;
-    top: 22px;
-  }
-  body #appall .menu .menubox .menuline{
-    height: 4px;
-    margin-bottom: 6px;
+  body #appall {
+    .login{
+      font-size: 15px;
+      right: 60px;
+    }
+    .div3 #div3 .show-box {
+      .small-box{
+        &:first-child{
+          margin-top: 9%;
+        }
+      }
+    }
+    .menu{
+      width: 30px;
+      right: 15px;
+      height: 30px;
+      top: 22px;
+     .menubox .menuline{
+        height: 4px;
+        margin-bottom: 6px;
+      }
+    }
   }
 }
 @media screen and (max-width:500px){
@@ -319,8 +388,21 @@ body{
   }
 }
 @media screen and (max-width:420px){
- body #app .div2 .text-box .trigle{
-   display: none;
+ body #app {
+   .div2 .text-box .trigle{
+      display: none;
+    }
+    .div3 #div3 .show-box {
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      .small-box{
+        &:first-child{
+          margin-top: 14%;
+        }
+      }
+    }
  }
  body #app .div2 .text-box .text-littel{
    width: 80%;

@@ -24,6 +24,9 @@ body{
                 border: 1px solid grey;
                 width: calc(100% - 160px);
             }
+            .textbox1{
+                height: 40px;
+            }
             .textbox2{
                 height: auto;
                 min-height: 300px;
@@ -52,6 +55,25 @@ body{
             cursor: pointer;
             border-radius: 5px;
             text-align: center;
+        }
+    }
+}
+@media screen and (max-width:500px){
+    body #edit 
+    {   
+         width: 100%;
+         padding-top: 0px;
+         margin-top: 0px;
+        .in-box {
+            textarea{
+                width: calc(100% - 2px);
+                margin: 0 auto;
+            }
+            .left{
+                width: 100%;
+                text-align: center;
+                margin-right: 0px;
+            }
         }
     }
 }
