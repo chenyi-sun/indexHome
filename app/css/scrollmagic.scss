@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-size: 0;
+}
+body{
+    background: red;
+    .main{
+        width: 400px;
+        height: 4000px;
+        background: black;
+    }
+    #flag_1{
+        width: 30px;
+        height: 30px;
+        background: blue;
+        position: absolute;
+        top: 140px;
+        right: 0;
+    }
+    .box1{
+        width: 100px;
+        height: 100px;
+        background: white;
+        position: absolute;
+        top: 400px;
+        left: 50%;
+        margin-left: -50px;
+        transition: all 2s ease-in;
+    }
+    .zap{
+        transform: scale(3);
+    }
+}
