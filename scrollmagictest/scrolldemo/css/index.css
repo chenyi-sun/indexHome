@@ -1,0 +1,30 @@
+body{
+    background: white;
+}
+body .box{
+    width: 400px;
+    height: 1900px;
+}
+body .flag1{
+    width: 20px;
+    height: 2px;
+    background: red;
+    position: absolute;
+    top: 800px;
+    right: 0;
+}
+
+body .demo1{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 800px;
+    left: 50%;
+    margin-left: -50px;
+    background: black;
+    transition: all 0.25s ease-in;
+}
+
+body .scale{
+    transform: scale(2);
+}
