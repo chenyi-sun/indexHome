@@ -1,5 +1,12 @@
+*{
+    padding: 0;
+    border: 0;
+    font-size: 0;
+    margin: 0;
+}
 body{
     background: white;
+    width: 100%;
 }
 body .box{
     width: 400px;
@@ -7,24 +14,29 @@ body .box{
 }
 body .flag1{
     width: 20px;
-    height: 2px;
+    height: 0px;
     background: red;
     position: absolute;
-    top: 800px;
+    top: 50%;
     right: 0;
 }
 
 body .demo1{
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 800px;
-    left: 50%;
-    margin-left: -50px;
+    width: 50vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
     background: black;
-    transition: all 0.25s ease-in;
 }
-
+body .demo2{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: red;
+    top: 0;
+    left: 0;
+}
 body .scale{
     transform: scale(2);
 }
