@@ -1,7 +1,7 @@
 *{
     padding: 0;
     border: 0;
-    font-size: 0;
+    /*font-size: 0;*/
     margin: 0;
 }
 body{
@@ -17,7 +17,7 @@ body .flag1{
     height: 0px;
     background: red;
     position: absolute;
-    top: 50%;
+    top: 55%;
     right: 0;
 }
 
