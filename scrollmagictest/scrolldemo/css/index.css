@@ -10,32 +10,40 @@ body{
 }
 body .box{
     width: 400px;
-    height: 1900px;
+    height: 300vh;
 }
 body .flag1{
     width: 20px;
     height: 0px;
     background: red;
     position: absolute;
-    top: 55%;
+    top: 0%;
     right: 0;
 }
 
 body .demo1{
     width: 50vw;
     height: 100vh;
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: 0%;
     left: 0;
     background: black;
 }
 body .demo2{
-    width: 100vw;
+    width: 50vw;
     height: 100vh;
     position: absolute;
     background: red;
-    top: 0;
+    top: 0%;
     left: 0;
+}
+body .demo3{
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0%;
+    background: blue;
 }
 body .scale{
     transform: scale(2);
