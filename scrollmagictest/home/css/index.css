@@ -1,0 +1,123 @@
+*{
+    padding: 0;
+    border: 0;
+    /*font-size: 0;*/
+    margin: 0;
+}
+body{
+    background: white;
+    width: 100%;
+}
+body .box{
+    width: 400px;
+    height: 600vh;
+}
+body .flag,body .flag2,body .flag3,body .flag4,body .flag5,body .flag6{
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: absolute;
+    top: 300px;
+}
+body .flag2{
+    top: 750px;
+}
+body .flag3{
+    top: 1100px;
+    opacity: 0;
+}
+
+body .flag4{
+    top: 1400px;
+    left: 0px;
+}
+body .flag5{
+    top: 1660px;
+    left: 0px;
+}
+body .flag6{
+    top: 2050px;
+    left: 0px;
+    text-align: center;
+}
+body .demo1{
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    top: 0%;
+    left: 0;
+    background: black;
+}
+body .demo2{
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    background: red;
+    top: 0%;
+    left: 0;
+}
+body .demo3{
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0%;
+    background: blue;
+}
+body .scale{
+    transform: scale(2);
+}
+body #trigger1{
+    width: 100px;
+    height: 1px;
+    background: black;
+    position: absolute;
+    top: 600px;
+    left: 0px;
+}
+
+body #trigger2{
+    width: 100px;
+    height: 1px;
+    background: black;
+    position: absolute;
+    top: 1000px;
+    left: 0px;
+}
+
+body #trigger3{
+    width: 100px;
+    height: 1px;
+    background: black;
+    position: absolute;
+    top: 1280px;
+    left: 0px;  
+}
+
+body #trigger4{
+    width: 100px;
+    height: 1px;
+    background: black;
+    position: absolute;
+    top: 1580px;
+    left: 0px;  
+}
+
+body #trigger5{
+    width: 100px;
+    height: 1px;
+    background: black;
+    position: absolute;
+    top: 1880px;
+    left: 0px;  
+}
+
+body #trigger6{
+    width: 100px;
+    height: 1px;
+    background: black;
+    position: absolute;
+    top: 2380px;
+    left: 0px;  
+}
+
