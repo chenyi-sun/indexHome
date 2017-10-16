@@ -5,7 +5,7 @@
                         .setClassToggle(".flag", "scale")
                         .addIndicators({name: "1 - add a class"})
                         .addTo(controller);
-						
+					
             ////////////////////////////////////////////////
             var animateElem = document.getElementById("animate2");
 			var scene2 = new ScrollMagic.Scene({triggerElement: "#trigger2", duration: 100})
@@ -89,4 +89,5 @@
 							.setTween(tween)
 							.addIndicators({name: "timeline"}) // add indicators (requires plugin)
 							.addTo(controller);
+				
         });

@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="handlebars.js"></script>
+</head>
+<body>
+    <div id="list">
+        <script id="template" type="text/x-handlebars-template">
+            <h3>{{title}}</h3>
+            <p>{{content}}</p>
+        </script>
+    </div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function() {  
+        //模拟json对象  
+        var data = {  
+                    "title":"中国",  
+                    "content":"中华人名共和国"  
+                };  
+        var template = $("#template").html();//jquery用法，获取模板代码  
+        var myTemplate = Handlebars.compile(template);//注册Handlebars模板  
+          
+        var html = myTemplate(data);//封装json对象，生成HTML代码  
+        $('#list').html(html);//jquery用法，将生成的html代码替换template模板  
+      })
+</script>
+</html>
