@@ -6,6 +6,10 @@ var gulp = require('gulp'),
     amdOptimize = require('amd-optimize'),
     concatFile = require('gulp-concat'),
     uglify = require('gulp-uglify');
+var wrap = require('gulp-wrap');
+var declare = require('gulp-declare');
+var concat = require('gulp-concat');
+var handlebars = require('gulp-handlebars');
 
 gulp.task('testSass', function(){
     gulp.src([
@@ -32,6 +36,7 @@ gulp.task('html', function(){
 gulp.task('testWatch', function(){
     gulp.watch('all/css/*.scss', ['testSass','html']);
     gulp.watch('all/html/*.html',['testHtmlmin','html']);
+    gulp.watch('all/hbs/*.hbs',['templates','html']);
 });
 
  gulp.task('connect',function(){
@@ -78,5 +83,26 @@ gulp.task('jsmin', function(){
         .pipe(gulp.dest('js'));
 });
 
-gulp.task('default', ['connect','testWatch']);
+gulp.task('copy', function(){
+  gulp.src('node_modules/handlebars/dist/handlebars.runtime.js')
+    .pipe(gulp.dest('js'));
+//   gulp.src('source/index.html')
+//     .pipe(gulp.dest('build/'));
+});
+
+gulp.task('templates', function(){
+  gulp.src('all/hbs/*.hbs')
+    .pipe(handlebars({
+      handlebars: require('handlebars')
+    }))
+    .pipe(wrap('Handlebars.template(<%= contents %>)'))
+    .pipe(declare({
+      namespace: 'MyApp.templates',
+      noRedeclare: true // Avoid duplicate declarations
+    }))
+    .pipe(concat('templates.js'))
+    .pipe(gulp.dest('js'));
+});
+
+gulp.task('default', ['connect','testWatch','templates','copy']);
 

@@ -89,5 +89,6 @@
 							.setTween(tween)
 							.addIndicators({name: "timeline"}) // add indicators (requires plugin)
 							.addTo(controller);
-				
+							
+				document.querySelector('#app').innerHTML = MyApp.templates.App();
         });
