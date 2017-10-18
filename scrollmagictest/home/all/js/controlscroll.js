@@ -91,4 +91,5 @@
 							.addTo(controller);
 							
 				document.querySelector('#app').innerHTML = MyApp.templates.App();
+				console.log( MyApp.templates.App());
         });

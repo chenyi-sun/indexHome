@@ -36,6 +36,7 @@ gulp.task('html', function(){
 gulp.task('testWatch', function(){
     gulp.watch('all/css/*.scss', ['testSass','html']);
     gulp.watch('all/html/*.html',['testHtmlmin','html']);
+    gulp.watch('all/js/*.js',['jsmin','html']);
     gulp.watch('all/hbs/*.hbs',['templates','html']);
 });
 
