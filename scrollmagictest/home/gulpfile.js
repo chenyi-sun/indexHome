@@ -40,7 +40,7 @@ gulp.task('testWatch', function(){
     gulp.watch('all/hbs/*.hbs',['templates','html']);
 });
 
- gulp.task('connect',function(){
+gulp.task('connect',function(){
     connect.server({
         root:'./',  
         ip:'192.168.31.110',
@@ -64,16 +64,16 @@ gulp.task('testHtmlmin', function () {
         .pipe(gulp.dest('./'));
 });
 
-gulp.task('js', function(){
-    gulp.src(["all/js/**/*.js","all/js/*.js"])
-        .pipe(amdOptimize('all/js/controlscroll',{
-            configFile: 'all/js/app-config.js',
-            findNestedDependencies: true,
-            include: false
-        }))
-        .pipe(concatFile("common.js"))
-        .pipe(gulp.dest("js/common"));
-});
+// gulp.task('js', function(){
+//     gulp.src(["all/js/**/*.js","all/js/*.js"])
+//         .pipe(amdOptimize('all/js/controlscroll',{
+//             configFile: 'all/js/app-config.js',
+//             findNestedDependencies: true,
+//             include: false
+//         }))
+//         .pipe(concatFile("common.js"))
+//         .pipe(gulp.dest("js/common"));
+// });
 
 gulp.task('jsmin', function(){
     gulp.src('all/js/*.js')
