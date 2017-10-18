@@ -83,12 +83,7 @@ gulp.task('jsmin', function(){
         .pipe(gulp.dest('js'));
 });
 
-gulp.task('copy', function(){
-  gulp.src('node_modules/handlebars/dist/handlebars.runtime.js')
-    .pipe(gulp.dest('js'));
-//   gulp.src('source/index.html')
-//     .pipe(gulp.dest('build/'));
-});
+
 
 gulp.task('templates', function(){
   gulp.src('all/hbs/*.hbs')
@@ -104,5 +99,11 @@ gulp.task('templates', function(){
     .pipe(gulp.dest('js'));
 });
 
+gulp.task('copy', function(){
+  gulp.src('node_modules/handlebars/dist/handlebars.runtime.js')
+    .pipe(gulp.dest('js'));
+//   gulp.src('source/index.html')
+//     .pipe(gulp.dest('build/'));
+});
 gulp.task('default', ['connect','testWatch','templates','copy']);
 
