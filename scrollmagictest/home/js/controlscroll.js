@@ -1,1 +1,1 @@
-require(["ScrollMagic","debug","jquery","ScrollMagicJquery","TimelineMax","common","ScrollMagicGSAP"],function(e,s,c,l,o,r){document.querySelector("#app").innerHTML=MyApp.templates.App(),console.log("ssssssssss")});
+require(["ScrollMagic","debug","jquery","ScrollMagicJquery","TimelineMax","common","ScrollMagicGSAP"],function(e,o,s,c,l,r){document.querySelector("#app").innerHTML=MyApp.templates.Loading(),console.log("ssssssssss")});
