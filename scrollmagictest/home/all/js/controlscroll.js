@@ -1,6 +1,6 @@
- require(['ScrollMagic','debug','jquery','ScrollMagicJquery','TimelineMax','ScrollMagicGSAP'], function(ScrollMagic,debug,$,ScrollMagicJquery,TimelineMax){
+ require(['ScrollMagic','debug','jquery','ScrollMagicJquery','TimelineMax','common','ScrollMagicGSAP'], function(ScrollMagic,debug,$,ScrollMagicJquery,TimelineMax,common){
             var controller = new ScrollMagic.Controller();
-
+			// alert(common.add(2,2));
             var scene = new ScrollMagic.Scene({triggerElement: "#trigger1"})
                         .setClassToggle(".flag", "scale")
                         .addIndicators({name: "1 - add a class"})
@@ -91,5 +91,5 @@
 							.addTo(controller);
 							
 				document.querySelector('#app').innerHTML = MyApp.templates.App();
-				console.log( MyApp.templates.App());
+				// console.log( MyApp.templates.App());
         });

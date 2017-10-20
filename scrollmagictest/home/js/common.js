@@ -1,0 +1,1 @@
+define(["ad"],function(n){return{add:function(d,e){return console.log(n.ss()),d+e},ad:n}});
