@@ -38,7 +38,7 @@ gulp.task('testWatch', function(){
     gulp.watch('all/html/*.html',['testHtmlmin','html']);
     gulp.watch('all/js/*.js',['jsmin','html']);
     gulp.watch('all/hbs/*.hbs',['templates','html']);
-    gulp.watch('all/js/*/*.js',['copy','jsmin','html']);
+    // gulp.watch('all/js/*/*.js',['copy','jsmin','html']);
 
 });
 
