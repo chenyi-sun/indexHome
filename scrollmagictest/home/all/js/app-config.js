@@ -15,6 +15,7 @@
                  ScrollMagicGSAP: 'js/ScrollMagic/animation.gsap.min',
                  common: 'js/common',
                  /*self define*/
+                 platform: 'js/common.platform',
                  ad: 'js/uitle/ad',
              },
              shim: {

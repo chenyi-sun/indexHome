@@ -1,6 +1,7 @@
 define(['ad'],function(ad){
     var add = function(x,y){
         console.log(ad.ss());
+        
         return x+y;
     }
 
