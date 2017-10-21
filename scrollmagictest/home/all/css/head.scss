@@ -1,8 +1,58 @@
 .head{
     width: 100%;
     height: 100px;
-    background: grey;
+    background: white;
     position: absolute;
     top: 0px;
     left: 0px;
+    .head-box-in,.head-box{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .head-box-in{
+        background: rgba(0,0,255,0.1);
+        .middle{
+            width: 80%;
+            position: absolute;
+            left: 10%;
+            background: white;
+            top: 30px;
+            .in{
+                width: 25%;
+                font-size: 20px;
+                display: inline-block;
+                text-align: center;
+                position: relative;
+                &:before{
+                    content: '';
+                    width: 1px;
+                    height: 60%;
+                    position: absolute;
+                    background: black;
+                    right: 0px;
+                    top: 20%;
+                }
+                &:last-child{
+                    &:before{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .head-box{
+        top: -100%;
+        background: grey;
+        transition: all ease-in 0.3s 0.2s;
+        z-index: 100;
+    }
+}
+ @media screen and (max-width:640px) {
+    .head{
+        .head-box{
+            background: black;
+            top: 0%;
+        }
+    }
 }
