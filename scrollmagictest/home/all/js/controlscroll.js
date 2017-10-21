@@ -1,5 +1,7 @@
  require(['ScrollMagic','debug','jquery','ScrollMagicJquery','TimelineMax','common','platform','ScrollMagicGSAP'], function(ScrollMagic,debug,$,ScrollMagicJquery,TimelineMax,common,platform){
-        	// 首页loading圈 
+        	
+		
+		// 首页loading圈 
 		
 		common.loading();
 
