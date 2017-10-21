@@ -6,25 +6,32 @@
     top: 0px;
     left: 0px;
     .loading_box{
-        width: 59px;
-        height: 59px;
+        width: 60px;
+        height: 60px;
         position: absolute;
         top: 50%;
-        margin-top: -29.5px;
+        margin-top: -30px;
         left: 50%;
-        margin-left: -29.5px;
+        margin-left: -30px;
         &:before{
             content: '';
-            width: 59px;
-            height: 59px;
+            width: 60px;
+            height: 60px;
             position: absolute;
             left: 0px;
             top: 0px;
             border: 1px solid rgba(0,0,0,0.5);
             border-radius: 100px;
         }
+        .svg-box{
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            animation: transfromall ease-in-out 1.8s infinite;
+            transform-origin:  50% 50%;
+        }
         .line{
-            
+
         }
         // .circle{
         //     width: 8px;
@@ -48,6 +55,15 @@
         //        animation-delay: -0s;
         //     }
         // }
+    }
+}
+
+@keyframes transfromall{
+    0%{
+       transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
     }
 }
 // @keyframes triangleanimation{
