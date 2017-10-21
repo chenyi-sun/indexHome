@@ -1,1 +1,1 @@
-define(["ad"],function(n){return{add:function(d,e){return console.log(n.ss()),d+e},ad:n}});
+define(["ad"],function(e){return{add:function(n,t){return console.log(e.ss()),n+t},ad:e,loading:function(){function e(t){t<=100&&(document.getElementsByClassName("loading_box")[0].getElementsByClassName("text")[0].innerHTML=t+"%",n+=1,setTimeout(e,100,n))}document.querySelector("#app").innerHTML=MyApp.templates.Loading();var n=1;e(n)}}});
