@@ -1,6 +1,7 @@
+$head-height: 70px;
 .head{
     width: 100%;
-    height: 100px;
+    height: $head-height;
     background: white;
     position: absolute;
     top: 0px;
@@ -11,6 +12,8 @@
         height: 100%;
     }
     .head-box-in{
+        top: 0px;
+        left: 0px;
         // background: rgba(0,0,255,0.1);
         .middle{
             width: 900px;
@@ -19,6 +22,7 @@
             background: white;
             margin-left: -450px;
             top: 30px;
+            font-size: 0px;
             .in{
                 width: 25%;
                 font-size: 20px;
@@ -30,7 +34,7 @@
                     width: 1px;
                     height: 60%;
                     position: absolute;
-                    background: black;
+                    background: blue;
                     right: 0px;
                     top: 20%;
                 }
@@ -47,13 +51,56 @@
         background: grey;
         transition: all ease-in 0.3s 0.2s;
         z-index: 100;
+        position: relative;
+        .menu{
+            width: 30px;
+            height: 25px;
+            position: absolute;
+            // background: red;
+            right: 20px;
+            top: 26px;
+            cursor: pointer;
+            z-index: 90;
+            .line-in{
+                width: 100%;
+                height: 3px;
+                position: relative;
+                background: black;
+                margin-bottom: 4px;
+            }
+        }
+        .in-box{
+            width: 100%;
+            height: 200px;
+            background: white;
+            position: absolute;
+            top: -500px;
+            opacity: 0;
+            z-index: 70;
+            transition: all ease-in 0.4s 0.5s;
+            &:before{
+                content: '';
+                width: 100%;
+                height: 1px;
+                background: blue;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+        }
     }
 }
  @media screen and (max-width:1000px) {
-    .head{
-        .head-box{
-            background: grey;
-            top: 0%;
+.head{
+    .head-box{
+        background: grey;
+        top: 0%;
+    }
+    .head-box{
+        .in-box{
+            top: $head-height;
+            opacity: 1;
         }
     }
+}
 }

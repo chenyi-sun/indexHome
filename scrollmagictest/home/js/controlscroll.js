@@ -1,1 +1,1 @@
-require(["ScrollMagic","debug","jquery","ScrollMagicJquery","TimelineMax","common","platform","ScrollMagicGSAP"],function(e,i,l,r,c,o,a){o.loading(),document.querySelector("#head").innerHTML=MyApp.templates.Head(),a.init()});
+require(["ScrollMagic","debug","jquery","ScrollMagicJquery","TimelineMax","common","platform","ScrollMagicGSAP"],function(e,i,l,r,c,n,o){n.loading(),document.querySelector("#head").innerHTML=MyApp.templates.Head(),o.init(),n.menu()});

@@ -1,4 +1,4 @@
-define(['ad'],function(ad){
+define(['ad','jquery'],function(ad,$){
     var add = function(x,y){
         // console.log(ad.ss());
         return x+y;
@@ -22,9 +22,14 @@ define(['ad'],function(ad){
         setTime(numInt)
         // setInterval(function(){console.log('dddd')},120);
     }
+    var menu = function(){
+        console.log('menu');
+        console.log($);
+    }
     return {
         add: add, //相加函数
         ad: ad,
-        loading: loading
+        loading: loading,
+        menu: menu
     }
 });

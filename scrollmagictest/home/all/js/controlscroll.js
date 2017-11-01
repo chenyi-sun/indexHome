@@ -9,5 +9,6 @@
 		document.querySelector('#head').innerHTML = MyApp.templates.Head();
 		platform.init();
 
-
-        });
+		common.menu();
+        
+	});
