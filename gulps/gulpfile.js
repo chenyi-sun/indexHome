@@ -1,6 +1,7 @@
 var gulp = require('gulp'), //本地安装gulp所用到的地方
     less = require('gulp-less'),
-    htmlmin = require('gulp-htmlmin');
+    htmlmin = require('gulp-htmlmin'),
+    livereload = require('gulp-livereload');
 //http://www.ydcss.com/archives/20
 gulp.task('Loading', function () {
     var options = {
@@ -14,12 +15,17 @@ gulp.task('Loading', function () {
     gulp.src('./../html/loading/loading.html')
         .pipe(htmlmin(options))
         .pipe(gulp.dest('./../think/public/static/html'));
+    gulp.watch('./../html/loading/loading.less', ['reload']);
+});
+gulp.task('reload', function(){
+
 });
 
 gulp.task('testLess', function () {
     gulp.src('src/less/index.less') //该任务针对的文件
         .pipe(less()) //该任务调用的模块
         .pipe(gulp.dest('src/css')); //将会在src/css下生成index.css
+    livereload.listen();
 });
 
 gulp.task('default', ['testLess']);
