@@ -1,3 +1,11 @@
+http://www.browsersync.cn/
+
+页面文件html必须高一层于css,js和css资源文件，因为browser-sync自动刷新不这样配置无法读取页面的样式
+
+gulp可以删除不需要的文件，监听html的刷新,批量替换页面中的链接
+
+
+
 gulp-autoprefixer的browsers参数详解 （https://github.com/ai/browserslist#queries）：
 
 ● last 2 versions: 主流浏览器的最新两个版本

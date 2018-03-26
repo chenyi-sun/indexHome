@@ -11,7 +11,9 @@ var gulp = require('gulp'),
     htmlmin = require('gulp-htmlmin'), //压缩HTML
     browserSync = require('browser-sync').create();//Browsersync
     var reload      = browserSync.reload;//Browsersync
-
+    var del = require('del');
+    var rev = require('gulp-rev'); //对文件名加MD5后缀
+    var revCollector = require('gulp-rev-collector');
 gulp.task('default', function(){
 
 });
@@ -25,6 +27,10 @@ gulp.task('testLess', function(){
       .pipe(sourcemaps.write())
       .pipe(gulp.dest('src/css'));
 
+  
+});
+
+gulp.task('movecss', function(){
    gulp.src('src/css/*.css')
         .pipe(autoprefixer({
             browsers: ['last 2 versions', 'Android >= 4.0'],
@@ -33,10 +39,12 @@ gulp.task('testLess', function(){
             //        transform: rotate(45deg);
             remove:true //是否去掉不必要的前缀 默认：true 
         }))
+        .pipe(rev())
         .pipe(gulp.dest('dist/css'))
+        .pipe(rev.manifest())
+        .pipe(gulp.dest('./rev')) 
         .pipe(reload({stream:true}));
 });
-
 gulp.task('testWatch', function(){
    gulp.watch('src/**/*.less', ['testLess']);
    gulp.watch('src/js/*.js',['jsmin']);
@@ -47,6 +55,12 @@ gulp.task('testWatch', function(){
             baseDir: "src"
         }
     });
+});
+
+gulp.task('rev', function() {
+  gulp.src(['./rev/*.json','src/**/*.html'])
+    .pipe(revCollector()) //- 执行文件内css名的替换
+    .pipe(gulp.dest('./dist')); //- 替换后的文件输出的目录
 });
 
 gulp.task('testHtmlmin', function () {
@@ -89,4 +103,13 @@ gulp.task('browser-sync', function() {
             baseDir: "src/html"
         }
     });
+});
+gulp.task('clean', function (cb) {
+  del([
+    // 'dist/report.csv',
+    // 这里我们使用一个通配模式来匹配 `mobile` 文件夹中的所有东西
+    'src/imgs/**/*',
+    // 我们不希望删掉这个文件，所以我们取反这个匹配模式
+    '!dist/mobile/deploy.json'
+  ], cb);
 });
