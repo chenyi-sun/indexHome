@@ -1,0 +1,1 @@
+console.log("ssss");var i=200;20<i&&(i=i+1+3);

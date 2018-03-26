@@ -1,0 +1,1 @@
+require("./index.js");for(var total=null,i=0;i<200;i++)total+=i;console.log(total);

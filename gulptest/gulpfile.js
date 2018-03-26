@@ -1,10 +1,14 @@
 var gulp = require('gulp'),
-    connect = require('gulp-connect'),
+    connect = require('gulp-connect'), 
     less = require('gulp-less'),
     cssmin = require('gulp-minify-css'),//编译less后压缩css
     sourcemaps = require('gulp-sourcemaps'); //当less有各种引入关系时，编译后不容易找到对应less文件，所以需要生成sourcemap文件，方便修改
     notify = require('gulp-notify'),//异常处理
-    plumber = require('gulp-plumber');//异常处理
+    plumber = require('gulp-plumber'),
+    autoprefixer = require('gulp-autoprefixer'),//异常处理
+    concat = require('gulp-concat'),//使用gulp-concat合并javascript文件，减少网络请求。
+    uglify = require('gulp-uglify'); //压缩多个js文件
+   
 
 gulp.task('default', function(){
 
@@ -13,20 +17,48 @@ gulp.task('default', function(){
 gulp.task('testLess', function(){
   //除了reset.less和test.less（**匹配src/less的0个或多个子文件夹）
    gulp.src(['src/less/*.less', '!src/less/**/{reset,test}.less'])
-   .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
-   .pipe(less())
-   .pipe(cssmin({compatibility: 'ie7'})) //兼容IE7及以下需设置compatibility属性
-   .pipe(sourcemaps.write())
-   .pipe(gulp.dest('src/css'))
+      .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
+      .pipe(less())
+      .pipe(cssmin({compatibility: 'ie7'})) //兼容IE7及以下需设置compatibility属性
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('src/css'));
+
+
+   gulp.src('src/css/*.css')
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions', 'Android >= 4.0'],
+            cascade: true, //是否美化属性值 默认：true 像这样：
+            //-webkit-transform: rotate(45deg);
+            //        transform: rotate(45deg);
+            remove:true //是否去掉不必要的前缀 默认：true 
+        }))
+        .pipe(gulp.dest('dist/css'));
+
 });
 
 gulp.task('testWatch', function(){
    gulp.watch('src/**/*.less', ['testLess']);
+   gulp.watch('src/js/*.js',['jsmin']);
 });
 
 gulp.task('connect', function() {
-  connect.server({
-    root: 'app',
-    livereload: true
-  });
+  // connect.server({
+  //   root: 'app',
+  //   livereload: true
+  // });
+});
+
+gulp.task('testConcat', function(){
+    gulp.src('src/js/*.js')
+        .pipe(concat('all.js'))
+        .pipe(gulp.dest('dist/js'))
+});
+
+gulp.task('jsmin', function () {
+    gulp.src(['src/js/*.js', '!src/js/**/{test1,test2}.js'])
+        .pipe(uglify({
+           mangle: true,//mangle: true,//类型：Boolean 默认：true 是否修改变量名
+           compress: true,
+        }))
+        .pipe(gulp.dest('dist/js'));
 });
