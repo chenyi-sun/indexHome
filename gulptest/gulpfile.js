@@ -7,8 +7,10 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     autoprefixer = require('gulp-autoprefixer'),//异常处理
     concat = require('gulp-concat'),//使用gulp-concat合并javascript文件，减少网络请求。
-    uglify = require('gulp-uglify'); //压缩多个js文件
-   
+    uglify = require('gulp-uglify'),//压缩多个js文件
+    htmlmin = require('gulp-htmlmin'), //压缩HTML
+    browserSync = require('browser-sync').create();//Browsersync
+    var reload      = browserSync.reload;//Browsersync
 
 gulp.task('default', function(){
 
@@ -23,7 +25,6 @@ gulp.task('testLess', function(){
       .pipe(sourcemaps.write())
       .pipe(gulp.dest('src/css'));
 
-
    gulp.src('src/css/*.css')
         .pipe(autoprefixer({
             browsers: ['last 2 versions', 'Android >= 4.0'],
@@ -32,26 +33,44 @@ gulp.task('testLess', function(){
             //        transform: rotate(45deg);
             remove:true //是否去掉不必要的前缀 默认：true 
         }))
-        .pipe(gulp.dest('dist/css'));
-
+        .pipe(gulp.dest('dist/css'))
+        .pipe(reload({stream:true}));
 });
 
 gulp.task('testWatch', function(){
    gulp.watch('src/**/*.less', ['testLess']);
    gulp.watch('src/js/*.js',['jsmin']);
+   gulp.watch('src/*.html', ['testHtmlmin']);
+
+   browserSync.init({
+        server: {
+            baseDir: "src"
+        }
+    });
 });
 
-gulp.task('connect', function() {
-  // connect.server({
-  //   root: 'app',
-  //   livereload: true
-  // });
+gulp.task('testHtmlmin', function () {
+    var options = {
+        removeComments: true,//清除HTML注释
+        collapseWhitespace: true,//压缩HTML
+        collapseBooleanAttributes: true,//省略布尔属性的值 <input checked="true"/> ==> <input />
+        removeEmptyAttributes: true,//删除所有空格作属性值 <input id="" /> ==> <input />
+        removeScriptTypeAttributes: true,//删除<script>的type="text/javascript"
+        removeStyleLinkTypeAttributes: true,//删除<style>和<link>的type="text/css"
+        minifyJS: true,//压缩页面JS
+        minifyCSS: true//压缩页面CSSgulp-htmlminy
+    };
+    gulp.src('src/*.html')
+        .pipe(htmlmin(options))
+        .pipe(gulp.dest('dist'))
+        .pipe(reload({stream:true}));
 });
 
 gulp.task('testConcat', function(){
     gulp.src('src/js/*.js')
         .pipe(concat('all.js'))
         .pipe(gulp.dest('dist/js'))
+        .pipe(reload({stream:true}));
 });
 
 gulp.task('jsmin', function () {
@@ -60,5 +79,14 @@ gulp.task('jsmin', function () {
            mangle: true,//mangle: true,//类型：Boolean 默认：true 是否修改变量名
            compress: true,
         }))
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('dist/js'))
+        .pipe(reload({stream:true}));
+});
+
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "src/html"
+        }
+    });
 });
