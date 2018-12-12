@@ -25,6 +25,7 @@
         background: #bac5ae;
         border-radius: 200px;
         overflow: hidden;
+        position: relative;
     }
     .circle .point{
         width: 10px;
@@ -56,6 +57,10 @@
         return document.getElementsByClassName(name)[0];
     }
     // TweenMax.staggerTo(".inline", 1, {y:"+=50", opacity:0,},0.2);
-    new TweenMax(".circle", 1, { rotate:180})
+    new TweenMax(".circle", 1.24, { 
+        rotation:360,
+        ease: Back.easeOut.config(1.7),
+        delay: 2
+    })
 </script>
 </html>
