@@ -1,0 +1,61 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .inline{
+        width: 50%;
+        height: 20px;
+        background: black;
+        margin-bottom: 30px;
+        position: relative;
+        left: 0px;
+    }
+    .circle{
+        width: 200px;
+        height: 200px;
+        background: #bac5ae;
+        border-radius: 200px;
+        overflow: hidden;
+    }
+    .circle .point{
+        width: 10px;
+        height: 10px;
+        background: black;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        top: 50px;
+        left: 50px;
+    }
+</style>
+<script src="./TweenMax.min.js"></script>
+<body>
+    <div id="demo">
+       <!--<div class="inline inline1" id="inline1"></div>
+       <div class="inline inline2"></div>
+       <div class="inline inline3"></div>
+       <div class="inline inline4"></div>-->
+       <div class="circle">
+           <div class="point">
+
+           </div>
+       </div>
+    </div>
+</body>
+<script>
+    function dom(name){
+        return document.getElementsByClassName(name)[0];
+    }
+    // TweenMax.staggerTo(".inline", 1, {y:"+=50", opacity:0,},0.2);
+    new TweenMax(".circle", 1, { rotate:180})
+</script>
+</html>
