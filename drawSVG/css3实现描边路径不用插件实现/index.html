@@ -3,9 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="./../test1/jquery.js"></script>
-    <script src="./../test1/jquery.drawsvg.js"></script>
+    <title>不用组件就可以进行描边路径的动画</title>
 </head>
 <style>
 body{
@@ -14,9 +12,8 @@ body{
 }
 #my_svg_element{
     position: fixed;
-    top: 0px;
+    top: 100px;
     left: 0px;
-    bottom: 0px;
     right: 0px;
     width: 100%;
     height:150px;
@@ -24,14 +21,16 @@ body{
 .wrapper {
   height: 2000px;
 }
+path { stroke-dasharray: 650; stroke-dashoffset: 0; animation: dash 1.6s linear; }
+@keyframes dash { from { stroke-dashoffset: 650; } to { stroke-dashoffset: 0; } }
 
 </style>
 <body>
   <div class="wrapper"></div>
   <div id="my_svg_element">
    <svg viewBox="0 0 201 146" style="background-color:#ffffff00" xmlns="http://www.w3.org/2000/svg" 
-   width="100%" height="500px">
-        <g stroke="#FFF" stroke-width="1" fill="none">
+   width="100%" height="60px">
+        <g stroke="#FFF" stroke-width="2" fill="none">
             <path d="M200.5 128.586c0 9.302-7.678 16.914-17.06 16.914H17.56C8.18 145.5.5 137.888.5 128.586V29.414C.5 20.112 8.178 12.5 17.56 12.5h165.88c9.382 0 17.06 7.612 17.06 16.914v99.172z"/>
             <path d="M183.828 80.118c0 26.467-21.644 47.924-48.34 47.924-26.698 0-48.342-21.457-48.342-47.924s21.644-47.924 48.34-47.924c26.698 0 48.342 21.457 48.342 47.924z"/>
             <path d="M171.98 80.118c0 19.978-16.338 36.177-36.493 36.177-20.15 0-36.49-16.2-36.49-36.177 0-19.98 16.34-36.177 36.49-36.177 20.155 0 36.494 16.2 36.494 36.178z"/>
@@ -47,19 +46,6 @@ body{
   </div>
 </body>
 <script>
-    $win = $(window),
-    $doc = $(document),
-    max = $doc.height() - $win.height();
-    $('path').eq(0).remove();
-    // var mySVG = $('svg').drawsvg();
-
-    // mySVG.drawsvg('animate',0.4);
-
-
-    // $win.on('scroll', function() {
-    //     var p = $win.scrollTop() / ($doc.height()-700);
-    //     mySVG.drawsvg('progress', p);
-    // });
-    // // mySVG.drawsvg('progress',0.4);
+    
 </script>
 </html>
