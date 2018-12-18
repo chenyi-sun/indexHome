@@ -1,0 +1,63 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>不用组件就可以进行描边路径的动画</title>
+</head>
+<style>
+body{
+    font-size: 0px;
+    background: grey;
+}
+.ball, .ball2 { 
+    width: 2px;
+  height: 2px;
+  background-color: white;
+  border-radius: 50%;
+  offset-path: path('M183.828 80.118c0 26.467-21.644 47.924-48.34 47.924-26.698 0-48.342-21.457-48.342-47.924s21.644-47.924 48.34-47.924c26.698 0 48.342 21.457 48.342 47.924z');
+  offset-distance: 0%;
+
+    /*offset-path: path('M183.828 80.118c0 26.467-21.644'); */
+    /*offset-distance: 0%; */
+  animation: red-ball 2s linear  infinite; 
+}
+.ball2{
+    animation-delay: 0.12s;
+    width: 13px;
+    height: 13px;
+}
+@keyframes red-ball {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+svg{
+    width: 600px;
+    display: block;
+    position: absolute;
+}
+</style>
+<body>
+  <div class="wrapper"></div>
+  <div> <!-- 旋转的小球1-->
+     <div id="my_svg_element">
+            <svg style="background-color:#ffffff00" xmlns="http://www.w3.org/2000/svg" 
+            >
+                <path fill="transparent" stroke="#888888" stroke-width="1" stroke-width="1"d="M183.828 80.118c0 26.467-21.644 47.924-48.34 47.924-26.698 0-48.342-21.457-48.342-47.924s21.644-47.924 48.34-47.924c26.698 0 48.342 21.457 48.342 47.924z"/>
+            </svg>
+        <div class="ball"></div>
+        <div class="ball2"></div>
+      </div>
+  </div>
+
+
+    
+</body>
+<script>
+    
+</script>
+</html>

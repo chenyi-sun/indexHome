@@ -31,3 +31,7 @@ https://www.shutterstock.com/zh/vectors
 https://editor.method.ac/处理SVG图的地址
 
 http://www.kamilet.cn/animate-element-along-svg-path/
+
+源代码生成SVG路径动画的行为
+
+https://www.w3cplus.com/svg/svg-animation-guide.html
