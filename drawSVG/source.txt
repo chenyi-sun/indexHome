@@ -1,4 +1,10 @@
-﻿http://www.iaxure.com/5668.html
+﻿使用SVG的好处
+
+可以使用现有的SVG图片，不用代码写
+
+不好的地方 对图像的path操作很麻烦
+
+http://www.iaxure.com/5668.html
 
 https://www.cnblogs.com/sese/p/8669746.html
 
