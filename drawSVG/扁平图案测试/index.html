@@ -29,8 +29,9 @@ box-shadow: 0 0 3px black;
  }*/
 g{
     animation-fill-mode: both;
-    animation: dash 1s linear;
-    transform: scale(0.2);
+    animation: dash 0.5s ease-in-out 0s 1 alternate forwards;
+    /*transform: scale(0.2);*/
+    opacity: 0;
     /**/
      /*animation-direction:normal;*/
      /*animation-iteration-count: 1.2s;*/
@@ -42,18 +43,26 @@ g:nth-child(2){
     animation-delay: 0.12s;
 }
 g:nth-child(3){
-    animation-delay: 0.6s;
+    animation-delay: 0.34s;
 }
 g:nth-child(4){
-    animation-delay: 1s;
+    animation-delay: 0.46s;
 }
-g:nth-child(4){
-    animation-delay: 0.8s;
+g:nth-child(5){
+    /*animation-delay: 0.56s;*/
+    position: relative;
+    animation: dash 0.5s ease-in-out 0.56s 1 alternate forwards, as 0.8s ease-in  0.7s infinite alternate;
 }
 @keyframes dash { 
-    from { transform: scale(0.2);} 
-    to { transform: scale(1);}
+    from { opacity: 0;} 
+    to { opacity: 1;}
 }
+@keyframes as { 
+    from { transform: translate(-4px,-2px); opacity: 0.9;} 
+    to { transform: translateX(4px,2px); opacity: 1; box-shadow: 0 0 10px yellow;}
+}
+
+
 
 </style>
 <body>
