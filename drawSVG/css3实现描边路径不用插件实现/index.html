@@ -21,8 +21,9 @@ body{
 .wrapper {
   height: 2000px;
 }
-path { stroke-dasharray: 650; stroke-dashoffset: 0; animation: dash 1.6s linear; }
-@keyframes dash { from { stroke-dashoffset: 650; } to { stroke-dashoffset: 0; } }
+path { stroke-dasharray: 650; stroke-dashoffset: 0; animation: dash 1.6s linear;
+box-shadow: 0 0 3px black; }
+@keyframes dash { from { stroke-dashoffset: 0; } to { stroke-dashoffset: 650; } }
 
 </style>
 <body>

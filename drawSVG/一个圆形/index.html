@@ -11,24 +11,24 @@ body{
     background: grey;
 }
 .ball, .ball2, .ball3 { 
-    width: 3px;
+  width: 3px;
   height: 3px;
   background-color: white;
   border-radius: 50%;
   offset-path: path('M183.828 80.118c0 23.467-21.644 47.924-48.34 47.924-26.698 0-48.342-21.457-48.342-47.924s21.644-47.924 48.34-47.924c26.698 0 48.342 21.457 48.342 47.924z');
   offset-distance: 0%;
-
-    /*offset-path: path('M183.828 80.118c0 26.467-21.644'); */
-    /*offset-distance: 0%; */
   animation: red-ball 2s linear  infinite; 
+  box-shadow: 0px 0px 12px black;
 }
 .ball2{
     animation-delay: 0.12s;
     width: 13px;
     height: 13px;
+    
 }
 .ball3{
-  offset-path: path('M50.18 48.637c0 6.49-5.304 11.747-11.852 11.747-6.543 0-11.847-5.258-11.847-11.747 0-6.488 5.305-11.746 11.848-11.746 6.548 0 11.852 5.26 11.852 11.747z');
+  animation-direction:reverse;
+  /*offset-path: path('M50.18 48.637c0 6.49-5.304 11.747-11.852 11.747-6.543 0-11.847-5.258-11.847-11.747 0-6.488 5.305-11.746 11.848-11.746 6.548 0 11.852 5.26 11.852 11.747z');*/
 }
 @keyframes red-ball {
   0% {
@@ -43,6 +43,9 @@ svg{
     display: block;
     position: absolute;
 }
+path{
+  box-shadow: 0px 0px 12px black;
+}
 </style>
 <body>
   <div class="wrapper"></div>
@@ -50,8 +53,8 @@ svg{
      <div id="my_svg_element">
             <svg style="background-color:#ffffff00" xmlns="http://www.w3.org/2000/svg" 
             >
-                <path fill="transparent" stroke="#888888" stroke-width="1" stroke-width="1" d="M50.18 48.637c0 6.49-5.304 11.747-11.852 11.747-6.543 0-11.847-5.258-11.847-11.747 0-6.488 5.305-11.746 11.848-11.746 6.548 0 11.852 5.26 11.852 11.747z"/>
-                <path fill="transparent" stroke="#888888" stroke-width="1" stroke-width="1" d="M183.828 80.118c0 26.467-21.644 47.924-48.34 47.924-26.698 0-48.342-21.457-48.342-47.924s21.644-47.924 48.34-47.924c26.698 0 48.342 21.457 48.342 47.924z"/>
+                <path fill="transparent" stroke="grey" stroke-width="1" stroke-width="1" d="M50.18 48.637c0 6.49-5.304 11.747-11.852 11.747-6.543 0-11.847-5.258-11.847-11.747 0-6.488 5.305-11.746 11.848-11.746 6.548 0 11.852 5.26 11.852 11.747z"/>
+                <path fill="transparent" stroke="grey" stroke-width="1" stroke-width="1" d="M183.828 80.118c0 26.467-21.644 47.924-48.34 47.924-26.698 0-48.342-21.457-48.342-47.924s21.644-47.924 48.34-47.924c26.698 0 48.342 21.457 48.342 47.924z"/>
             </svg>
         <div class="ball"></div>
         <!--<div class="ball2"></div>-->
