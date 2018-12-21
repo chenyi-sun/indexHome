@@ -19,6 +19,7 @@ body{
   offset-distance: 0%;
   animation: red-ball 2s linear  infinite; 
   box-shadow: 0px 0px 12px black;
+  position: absolute;
 }
 .ball2{
     animation-delay: 0.12s;
@@ -39,28 +40,201 @@ body{
   }
 }
 svg{
-    width: 600px;
-    display: block;
-    position: absolute;
+    width: 25%;
+    display: inline-block;
+    position: relative;
 }
 path{
   box-shadow: 0px 0px 12px black;
 }
+/*path1*/
+.path svg{
+  stroke-dasharray:'10';  /*绘制虚线: 一个参数时： 表示一段虚线长度和每段虚线之间的间距 */
+  /*两个参数或者多个参数时：一个表示长度，一个表示间距*/
+}
+.path2 path{
+  transform: rotate(100deg);
+  transform-origin: 39% 45%;
+  animation: path-2 4s linear  infinite; 
+}
+
+@keyframes path-2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*=======================*/
+
+.path3{
+  /*stroke-dasharray: 2;*/
+  /*stroke-dashoffset: 220;*/
+  animation: path3 1s linear  infinite; 
+ 
+}
+
+@keyframes path3 {
+  0% {
+    stroke-dasharray: 4;
+  }
+ 
+  100% {
+    stroke-dasharray: 3;
+  }
+}
+/*=========================*/
+.path4{
+   stroke-dasharray: 15;
+   stroke-width: 1;
+   /*animation-direction: reverse;*/
+   animation: path4 1s linear  infinite; 
+}
+@keyframes path4 {
+  0% {
+    stroke-dasharray: 15;
+  }
+ 
+  100% {
+    stroke-dasharray: 0;
+  }
+}
+
+/*=======================*/
+.path5{
+   stroke-dasharray: 22,2;
+   stroke-width: 1;
+   /*animation-direction: reverse;*/
+}
+/*=========================*/
+.path6{
+   stroke-dasharray: 26,2;
+   stroke-width: 1;
+   animation: path6 1s ease-in-out  infinite; 
+   /*animation-direction: reverse;*/
+}
+@keyframes path6 {
+  0% {
+    stroke-dasharray: 26,2;
+  }
+ 
+  100% {
+    stroke-dasharray: 26,100;
+  }
+}
+/*=========================*/
+.path7{
+   stroke-dasharray: 26,2,26,19;
+   stroke-width: 1;
+ 
+}
+/*=============================*/
+.path8 {
+  stroke-dasharray: 26,2,26,19;
+  /*stroke-dashoffset: 2;*/
+  animation: path8 1s linear  infinite; 
+}
+@keyframes path8 {
+  0% {
+    stroke-dashoffset: 0;
+  }
+ 
+  100% {
+     stroke-dashoffset: 360;
+  }
+}
+/*==============================*/
+.path9 {
+  stroke-dasharray: 320;
+  animation: path9 1s linear  infinite; 
+  animation-direction: alternate;
+  /*animation-direction:reverse;*/
+  /*stroke-dashoffset: 0; */
+}
+@keyframes path9 {
+  0% {
+    stroke-dashoffset: 320;
+  }
+ 
+  100% {
+     stroke-dashoffset: 0;
+  }
+}
+/*===============================*/
+.path10-1,.path10-2{
+  stroke-dasharray: 320;
+  animation: path10 2s linear  infinite; 
+  
+}
+.path10-2{
+  transform: scale(0.6);
+  position: absolute;
+  left: 31.1%;
+  animation-delay: 0.5s;
+  animation: path9 2s linear  infinite;
+  /*animation-direction:reverse;*/
+}
+@keyframes path10 {
+  0% {
+    stroke-dashoffset: 280;
+  }
+  55%{
+     stroke-dashoffset: 0;
+  }
+  60% {
+      stroke-dashoffset: 310;
+  }
+  100% {
+      stroke-dashoffset: 280;
+  }
+}
 </style>
 <body>
   <div class="wrapper"></div>
-  <div> <!-- 旋转的小球1-->
-     <div id="my_svg_element">
-            <svg style="background-color:#ffffff00" xmlns="http://www.w3.org/2000/svg" 
-            >
-                <path fill="transparent" stroke="grey" stroke-width="1" stroke-width="1" d="M50.18 48.637c0 6.49-5.304 11.747-11.852 11.747-6.543 0-11.847-5.258-11.847-11.747 0-6.488 5.305-11.746 11.848-11.746 6.548 0 11.852 5.26 11.852 11.747z"/>
-                <path fill="transparent" stroke="grey" stroke-width="1" stroke-width="1" d="M183.828 80.118c0 26.467-21.644 47.924-48.34 47.924-26.698 0-48.342-21.457-48.342-47.924s21.644-47.924 48.34-47.924c26.698 0 48.342 21.457 48.342 47.924z"/>
-            </svg>
-        <div class="ball"></div>
-        <!--<div class="ball2"></div>-->
-        <div class="ball3"></div>
-      </div>
-  </div>
+  <!-- 小球1-->
+  <svg  class="path1" style="background-color:#ffffff00" xmlns="http://www.w3.org/2000/svg" 
+  >
+      <path fill="transparent" stroke-dasharray='10' stroke="white" stroke-width="1" stroke-width="1" d="M183.828 80.118c0 26.467-21.644 47.924-48.34 47.924-26.698 0-48.342-21.457-48.342-47.924s21.644-47.924 48.34-47.924c26.698 0 48.342 21.457 48.342 47.924z"/>
+  </svg>
+  <!-- 小球2-->
+  <svg  class="path2" style="background-color:#ffffff00" xmlns="http://www.w3.org/2000/svg" 
+  >
+      <path fill="transparent" stroke-dasharray='5' stroke="white" stroke-width="1" stroke-width="1" d="M183.828 80.118c0 26.467-21.644 47.924-48.34 47.924-26.698 0-48.342-21.457-48.342-47.924s21.644-47.924 48.34-47.924c26.698 0 48.342 21.457 48.342 47.924z"/>
+  </svg>
+  <!-- 小球3-->
+  <svg  class="path3" style="background-color:#ffffff00" xmlns="http://www.w3.org/2000/svg" 
+  >
+      <path fill="transparent"  stroke="white" stroke-width="1" stroke-width="1" d="M183.828 80.118c0 26.467-21.644 47.924-48.34 47.924-26.698 0-48.342-21.457-48.342-47.924s21.644-47.924 48.34-47.924c26.698 0 48.342 21.457 48.342 47.924z"/>
+  </svg>
+  <svg class="path4" style="background-color:#ffffff00" xmlns="http://www.w3.org/2000/svg" >
+      <path fill="transparent"  stroke="white" d="M183.828 80.118c0 26.467-21.644 47.924-48.34 47.924-26.698 0-48.342-21.457-48.342-47.924s21.644-47.924 48.34-47.924c26.698 0 48.342 21.457 48.342 47.924z"/>
+  </svg>
+  <svg class="path5" style="background-color:#ffffff00" xmlns="http://www.w3.org/2000/svg" >
+      <path fill="transparent"  stroke="white" d="M183.828 80.118c0 26.467-21.644 47.924-48.34 47.924-26.698 0-48.342-21.457-48.342-47.924s21.644-47.924 48.34-47.924c26.698 0 48.342 21.457 48.342 47.924z"/>
+  </svg>
+  <svg class="path6" style="background-color:#ffffff00" xmlns="http://www.w3.org/2000/svg" >
+      <path fill="transparent"  stroke="white" d="M183.828 80.118c0 26.467-21.644 47.924-48.34 47.924-26.698 0-48.342-21.457-48.342-47.924s21.644-47.924 48.34-47.924c26.698 0 48.342 21.457 48.342 47.924z"/>
+  </svg>
+  <svg class="path7" style="background-color:#ffffff00" xmlns="http://www.w3.org/2000/svg" >
+      <path fill="transparent"  stroke="white" d="M183.828 80.118c0 26.467-21.644 47.924-48.34 47.924-26.698 0-48.342-21.457-48.342-47.924s21.644-47.924 48.34-47.924c26.698 0 48.342 21.457 48.342 47.924z"/>
+  </svg>
+  <svg class="path8" style="background-color:#ffffff00" xmlns="http://www.w3.org/2000/svg" >
+      <path fill="transparent"  stroke="white" d="M183.828 80.118c0 26.467-21.644 47.924-48.34 47.924-26.698 0-48.342-21.457-48.342-47.924s21.644-47.924 48.34-47.924c26.698 0 48.342 21.457 48.342 47.924z"/>
+  </svg>
+  <svg class="path9" style="background-color:#ffffff00" xmlns="http://www.w3.org/2000/svg" >
+      <path fill="transparent"  stroke="white" d="M183.828 80.118c0 26.467-21.644 47.924-48.34 47.924-26.698 0-48.342-21.457-48.342-47.924s21.644-47.924 48.34-47.924c26.698 0 48.342 21.457 48.342 47.924z"/>
+  </svg>
+  <svg class="path10-1" style="background-color:#ffffff00" xmlns="http://www.w3.org/2000/svg" >
+      <path fill="transparent"  stroke="white" d="M183.828 80.118c0 26.467-21.644 47.924-48.34 47.924-26.698 0-48.342-21.457-48.342-47.924s21.644-47.924 48.34-47.924c26.698 0 48.342 21.457 48.342 47.924z"/>
+  </svg>
+  <svg class="path10-2" style="background-color:#ffffff00" xmlns="http://www.w3.org/2000/svg" >
+      <path fill="transparent"  stroke="white" d="M183.828 80.118c0 26.467-21.644 47.924-48.34 47.924-26.698 0-48.342-21.457-48.342-47.924s21.644-47.924 48.34-47.924c26.698 0 48.342 21.457 48.342 47.924z"/>
+  </svg>
+  <div class="ball"></div>
+          <!--<div class="ball2"></div>-->
+          <div class="ball3"></div>
+  <div style="font-size:12px;">===========================</div>
 </body>
 <script>
     
