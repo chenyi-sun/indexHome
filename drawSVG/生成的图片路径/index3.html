@@ -1,0 +1,100 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>生辰的图片路径</title>
+</head>
+<style>
+body{
+    font-size: 0px;
+    background: grey;
+}
+
+@keyframes red-ball {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+svg circle{
+  stroke-width: 10;
+}
+svg circle:nth-child(1),svg circle:nth-child(2),svg circle:nth-child(3){
+    width: 474px;
+    display: inline-block;
+    /*position: relative;*/
+    transform: scale(1.8);
+    transform-origin: 50% 50%;
+    animation: path 2s linear 0s infinite alternate forwards; 
+    
+}
+svg circle:nth-child(2){
+   /*animation: path-2 2s linear 0s infinite forwards;*/
+   transform-origin: 50% 50%; 
+   transform: scale(3.5);
+   position: relative;
+   animation: path 1.22s linear 0s infinite alternate forwards; 
+}
+svg circle:nth-child(3){
+  transform-origin: 50% 50%;
+   transform: scale(1);
+   animation: path3 1.67s linear 0s infinite alternate forwards; 
+  /*animation: path-3 1.5s linear 0s infinite alternate forwards;*/
+}
+
+/*@keyframes path-2 {
+  0% {
+     transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(5deg) scale(1.7);
+  }
+  100%{
+      transform: rotate(360deg) scale(1);
+  }
+}
+*/
+@keyframes path {
+  0% {
+   
+    stroke-dasharray: 0 20;
+  }
+  100% {
+    stroke-dasharray: 100 0;
+  }
+}
+@keyframes path3 {
+  0% {
+    stroke-dasharray: 0 20;
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+  100% {
+    stroke-dasharray: 100 0;
+    stroke-dashoffset: 100;
+    opacity: 1
+  }
+}
+
+
+</style>
+<body>
+  <div class="wrapper"></div>
+  <!-- 小球1-->
+  <svg version="1.1" baseProfile="basic" id="图层_1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="474px" height="474px"
+	 viewBox="0 0 474 474" xml:space="preserve" style="width:120px;height:120px;">
+      <circle class="cir1"  stroke="white" stroke-width="1" stroke-width="1" fill="none" cx="237" cy="237" r="102.5"/>
+      <circle  stroke="white" stroke-width="1" stroke-width="1" fill="none" cx="237" cy="237" r="36.5"/>
+      <circle  stroke="white" stroke-width="1" stroke-width="1" fill="none" cx="237" cy="237" r="221.5"/>
+</svg>
+
+  
+</body>
+<script>
+    
+</script>
+</html>
